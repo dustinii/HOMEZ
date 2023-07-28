@@ -7,5 +7,6 @@
 - [Samuel Rey](https://github.com/sammyrey6)
 - [Joceliyn](https://github.com/jovaldez98/)
 - [Joel Estrada](https://github.com/JoelEstrada16)
+- [Kin Ho](https://github.com/hokin2023)
+- [Mauricio Ortiz](https://github.com/Ortizzz-j)
 
--[Mauricio Ortiz](https://github.com/Ortizzz-j)
