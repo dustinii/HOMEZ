@@ -1,36 +1,45 @@
 [
     {
         "name": "GearShift Gurus",
-        "orientation": "Homiesexual"
+        "StickShift": "true",
+        "password": "password1"
     },
     {
         "name": "Turbo Torque",
-        "orientation": "Homiesexual"
+        "StickShift": "false",
+        "password": "password2"
     },
     {
         "name": "Axle Avengers",
-        "orientation": "Homiesexual"
+        "StickShift": "true",
+        "password": "password3"
     },
     {
         "name": "Ignition Igniters",
-        "orientation": "Homiesexual"
+        "StickShift": "false",
+        "password": "password4"
     },
     {
         "name": "Piston Powerhouse",
-        "orientation": "Homiesexual"
+        "StickShift": "true",
+        "password": "password5"
     },
     {
         "name": "Nitro Drifters",
-        "orientation": "Homiesexual"
+        "StickShift": "true",
+        "password": "password6"
+
     },
     {
         "name": "Chrome Crusaders",
-        "orientation": "Homiesexual"
+        "StickShift": "true",
+        "password": "password7"
     },
     {
         "name": "Roadster Racers",
-        "orientation": "Homiesexual"
-    },
+        "StickShift": "false",
+        "password": "password8"
+    }
     
 
 ]
