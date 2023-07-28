@@ -1,3 +1,6 @@
+# HOMEZ
+
+
 ## Contributing Members
 - [Dustin II](https://github.com/dustinii/)
 - [Brian Autieri](https://github.com/Brian-Autieri)
@@ -5,4 +8,3 @@
 - [Joceliyn](https://github.com/jovaldez98/)
 - [Joel Estrada](https://github.com/JoelEstrada16)
 - [Kin Ho](https://github.com/hokin2023)
-- [Mauricio Ortiz](https://github.com/Ortizzz-j)
