@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Home from "./pages/Home";
 import About from "./pages/About";
+
 import "./App.css";
 
 const client = new ApolloClient({
@@ -14,6 +15,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <nav>
+      
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
         </nav>
