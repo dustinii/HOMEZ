@@ -1,0 +1,41 @@
+.navBar {
+    overflow: hidden;
+    background-color: #1a1a1a;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navBar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    background-color: #111;
+}
+
+.navBar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navBtn {
+    float: right;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+  
