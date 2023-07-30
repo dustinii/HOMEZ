@@ -3,7 +3,7 @@ export default function Footer() {
         <>
           <footer className="footer">
       <p>
-        &copy; 2350 HOMEZ. All rights reserved.
+        &copy; 2023 HOMEZ. All rights reserved.
       </p>
   </footer>
         </>

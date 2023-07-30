@@ -13,10 +13,11 @@ const HomezNavbar = () => {
                     <Nav.Link as={Link} to="/drive">Drive</Nav.Link>
                     <Nav.Link as={Link} to="/deliver">Deliver</Nav.Link>
                     <Nav.Link as={Link} to="/business">Business</Nav.Link>
-                    <Nav.Link as={Link} to="/more">More</Nav.Link>
+                    <Nav.Link as={Link} to="/developers">Developers</Nav.Link>
                 </Nav>
-                <Form inline>
-                    <Button className='navBtn' variant="outline-success">Sign in</Button>
+                <Form>
+                    <Button className='navBtn' variant="outline-success">Log in</Button>
+                    <Button className='navBtn' variant="outline-success">Sign up</Button>
                 </Form>
             </Navbar.Collapse>
         </Navbar>

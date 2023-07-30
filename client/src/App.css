@@ -18,6 +18,8 @@
 
 .navBar a:hover {
     background-color: #111;
+    color: #4CAF50;
+    border-radius: 10px;
 }
 
 .navBar a.active {
@@ -26,7 +28,7 @@
 }
 
 .navBtn {
-    float: right;
+    margin-right: 5px;
 }
 
 .footer {
