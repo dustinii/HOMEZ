@@ -34,3 +34,4 @@
 ## [TESTS](#tests)
 
 ## [QUESTIONS](#questions)
+Please contact any one of the [contributing members](#contributing) if you have any questions about this app or its functionality.
