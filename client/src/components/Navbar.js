@@ -11,9 +11,9 @@ const HomezNavbar = () => {
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/ride">Ride</Nav.Link>
                     <Nav.Link as={Link} to="/drive">Drive</Nav.Link>
-                    <Nav.Link as={Link} to="/deliver">Deliver</Nav.Link>
-                    <Nav.Link as={Link} to="/business">Business</Nav.Link>
-                    <Nav.Link as={Link} to="/developers">Developers</Nav.Link>
+                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    {/* Put this under about */}
+                    {/* <Nav.Link as={Link} to="/developers">Developers</Nav.Link> */}
                 </Nav>
                 <Form>
                     <Button className='navBtn' variant="outline-success">Log in</Button>
