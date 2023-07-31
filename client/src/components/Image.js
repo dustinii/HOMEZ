@@ -1,9 +1,17 @@
 // import React from 'react';
-// import { Image } from 'react-bootstrap'
+// import testImage from '../assets/images';
+
+// export default function Image() {
+//     return (
+//         <>
+        
+//         </>
+//     )
+// }
 
 // const HomezImage = () => {
 //     return (
-//         <Image src="https://www.homez.com/assets/images/homez-logo.png" fluid />
+//         <Image src={testImage}fluid />
 //     );
 // }
 
