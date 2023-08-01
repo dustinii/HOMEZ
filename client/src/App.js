@@ -4,7 +4,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Ride from "./pages/Ride";
 import Drive from "./pages/Drive";
+<<<<<<< HEAD
 // import Reviews from "./pages/Reviews";
+=======
+import Developers from "./pages/Developers";
+>>>>>>> main
 import Footer from "./components/Footer";
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,6 +31,7 @@ function App() {
           <Route path="/ride" element={<Ride />} />
           <Route path="/drive" element={<Drive />} />
           {/* <Route path="/reviews" element={<Reviews />} /> */}
+          <Route path="/developers" element={<Developers />} />
         </Routes>
 
         <Footer />
