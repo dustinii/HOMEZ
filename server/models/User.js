@@ -20,7 +20,10 @@ const riderSchema = new Schema(
       type: String,
       required: true,
     },
-   
+   role: {
+    type: String,
+    enum: ['rider', 'homezuser']
+   }
    
   },
   // set this to use virtual below
