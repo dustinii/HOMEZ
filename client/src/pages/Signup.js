@@ -58,9 +58,10 @@ const SignupHomez = () => {
     return (
       <>
           <HomezNavbar />
-          <h1>Sign Up</h1>
+          <h1 className='signupTitle'>Register with HOMEZ: For Worry-Free Nights Out</h1>
 
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <div className='signupForm'>
           <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Something went wrong with your signup</Alert>
 
             <Form.Group as={Col} controlId="formGridFirstName">
@@ -93,6 +94,7 @@ const SignupHomez = () => {
             </Form.Group>
     
           <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+          </div>
         </Form>
         </>
       );
