@@ -1,0 +1,25 @@
+[{
+    "origin": "New York",
+    "destination": "Los Angeles",
+    "timeForDeparture": 1627728000,
+    "price": 250
+},
+{
+    "origin": "Chicago",
+    "destination": "Miami",
+    "timeForDeparture": 1627814400,
+    "price": 180
+},
+{
+    "origin": "San Francisco",
+    "destination": "Seattle",
+    "timeForDeparture": 1627900800,
+    "price": 150
+},
+{
+    "origin": "Boston",
+    "destination": "Washington D.C.",
+    "timeForDeparture": 1627987200,
+    "price": 120
+  }
+  ]

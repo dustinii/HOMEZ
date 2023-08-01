@@ -4,6 +4,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Ride from "./pages/Ride";
 import Drive from "./pages/Drive";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+// import Reviews from "./pages/Reviews";
+import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import LoginHomez from "./pages/Login"
 import SignupHomez from "./pages/Signup";
@@ -28,8 +32,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/ride" element={<Ride />} />
           <Route path="/drive" element={<Drive />} />
-          <Route path="/login" element={<LoginHomez />}/>
-          <Route path="/signup" element={<SignupHomez />}/>
+          {/* <Route path="/reviews" element={<Reviews />} /> */}
+          <Route path="/developers" element={<Developers />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
         <Footer />

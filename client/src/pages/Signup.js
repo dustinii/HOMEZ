@@ -1,8 +1,11 @@
 import React, { useState, useEffect }  from 'react';
 import { useMutation } from '@apollo/client';
-import { Button, Form, Col, Row, Alert } from 'react-bootstrap';
+import { Button, Form, Col, Row, Alert, Container } from 'react-bootstrap';
 import { ADD_HOMEZ } from '../utils/mutations';
 import Auth from '../utils/auth'
+// import HomezNavBar
+import HomezNavbar from '../components/Navbar';
+
 
 const SignupHomez = () => {
 
@@ -47,13 +50,16 @@ const SignupHomez = () => {
       username: '',
       email: '',
       password: '',
-    })
-  }
+    });
+  };
 
 
 
     return (
       <>
+          <HomezNavbar />
+          <h1>Sign Up</h1>
+
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
           <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Something went wrong with your signup</Alert>
 
@@ -62,6 +68,17 @@ const SignupHomez = () => {
               <Form.Control type="text" placeholder="Enter first name" name="username" onChange={handleInputChange} value={userFormData.username} required/>
               <Form.Control.Feedback type="invalid">username is required!</Form.Control.Feedback>
             </Form.Group>
+ 
+
+                <Form.Group as={Col} controlId="formGridFirstName">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter first name" />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridLastName">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter last name" />
+          </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
