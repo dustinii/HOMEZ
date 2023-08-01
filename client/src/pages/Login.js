@@ -3,9 +3,8 @@ import { Form, Button, Container } from 'react-bootstrap';
 import HomezNavbar from '../components/Navbar';
 
 
-
-
 const LoginHomez = () => {
+ 
     return (
         <>
             <HomezNavbar />
