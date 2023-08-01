@@ -89,4 +89,3 @@ rides: () => rides,
 
 
 
-module.exports = resolvers;

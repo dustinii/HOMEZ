@@ -3,22 +3,18 @@ const { gql } = require('apollo-server-express');
 const { GraphQLServer, PubSub } = require("graphql-yoga");
 
 const typeDefs = gql`
-  type Rider {
+  type User {
     _id: ID!
     username: String!
     email: String!
    
   }
   
-  type HomezUser {
-    _id: ID!
-    username: String!
-    email: String! 
-  }
+  
 
   type rideInformation {
     token: ID!
-    user: Rider
+    user: User.role.rider
     price: Number!
     origin: String!
     destination: String!
@@ -43,7 +39,7 @@ rides : [rideInformation!]
     addRider(username: String!, email: String!, password: String!): Auth
     addHomezUser(username: String!, email: String!, password: String!): Auth
 
-    bookRide(user: Rider,
+    bookRide(user: User.role.rider,
       price: Number!,
       origin: String!,
       destination: String!,

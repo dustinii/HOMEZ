@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 
 
-const riderSchema = new Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
@@ -35,7 +35,7 @@ const riderSchema = new Schema(
 );
 
 // hash rider password
-riderSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -45,12 +45,12 @@ riderSchema.pre('save', async function (next) {
 });
 
 // custom method to compare and validate password for logging in
-riderSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
 
 
-const Rider = model('Rider', riderSchema);
+const User = model('User', userSchema);
 
-module.exports = Rider;
+module.exports = User;
