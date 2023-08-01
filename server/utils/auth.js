@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 
 // secret will get changed to a .env file later on. This is just a placeholder for now. and expiration can be changed later as well.
 
-// Where can i hide this secret?? and expiration??
 const secret = process.env.SECRET;
 const expiration = '2h';
 
