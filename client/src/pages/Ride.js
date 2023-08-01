@@ -10,8 +10,10 @@ function Ride () {
     return (
         <div>
             <HomezNavbar />
-            <h1>Have a Seat, HOMEZ Will Take the Wheel</h1>
+            <h1 className='rideTitle'>Have a Seat, HOMEZ Will Take the Wheel</h1>
+            <div className='mapForm'>
             <MapForm handleInputFocus={handleInputFocus} />
+            </div>
         </div>
     );
 }
