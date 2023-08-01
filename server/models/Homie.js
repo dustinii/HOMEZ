@@ -1,22 +1,21 @@
 const { Schema } = require('mongoose');
 
-
 const homieSchema = new Schema({
-  rider: {
+  origin: {
     type: String,
     required: true,
   },
 
-  milesAway: {
+  destination: {
     type: Number,
     required: true,
   },
  
-  EstimatedDropOff: {
+  timeForDeparture: {
     type: Number,
     required: true,
   },
-  Price: {
+  price: {
     type: Number,
   },
   

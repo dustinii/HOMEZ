@@ -2,21 +2,21 @@ const { Schema } = require('mongoose');
 
 
 const rideSchema = new Schema({
-  driver: {
+  origin: {
     type: String,
     required: true,
   },
 
-  milesAway: {
+  destination: {
     type: Number,
     required: true,
   },
  
-  EstimatedDropOff: {
+  timeForDeparture: {
     type: Number,
     required: true,
   },
-  Price: {
+  price: {
     type: Number,
   },
   
