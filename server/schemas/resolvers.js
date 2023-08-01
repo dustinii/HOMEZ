@@ -74,3 +74,8 @@ const resolvers = {
   };
 
   module.exports = resolvers;
+
+const { Homie, Ride, User } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+
+module.exports = resolvers;
