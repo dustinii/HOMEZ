@@ -5,6 +5,9 @@ import About from "./pages/About";
 import Ride from "./pages/Ride";
 import Drive from "./pages/Drive";
 import Footer from "./components/Footer";
+import LoginHomez from "./pages/Login"
+import SignupHomez from "./pages/Signup";
+
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
