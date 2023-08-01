@@ -5,8 +5,8 @@ function About() {
   return (
     <div>
       <HomezNavbar />
-      <h1>How HOMEZ is Shaping Responsible Transportation</h1>
-      <p>
+      <h1 className="aboutTitle"> How HOMEZ is Shaping Responsible Transportation</h1>
+      <p className="aboutText">
         Welcome to HOMEZ, your ultimate solution for responsible transportation.
         We've drawn inspiration from the functionality of popular ride-sharing
         platforms and added our own unique twist to cater to those who value
