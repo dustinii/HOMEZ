@@ -9,6 +9,9 @@ import Login from "./pages/Login";
 // import Reviews from "./pages/Reviews";
 import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
+import LoginHomez from "./pages/Login"
+import SignupHomez from "./pages/Signup";
+
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
