@@ -16,8 +16,8 @@ const HomezNavbar = () => {
                     {/* <Nav.Link as={Link} to="/developers">Developers</Nav.Link> */}
                 </Nav>
                 <Form>
-                    <Button className='navBtn' variant="outline-success">Log in</Button>
-                    <Button className='navBtn' variant="outline-success">Sign up</Button>
+                    <Button as={Link} to="/login" className='navBtn' variant="outline-success">Log in</Button>
+                    <Button as={Link} to="/signup" className='navBtn' variant="outline-success">Sign up</Button>
                 </Form>
             </Navbar.Collapse>
         </Navbar>
