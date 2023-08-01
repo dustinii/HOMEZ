@@ -41,7 +41,7 @@ const MapForm = ({ handleInputFocus }) => {
           Time of Ride:
           <input type="datetime-local" name="time" value={formState.time} onChange={handleChange} />
         </label>
-        <input type="submit" value="Book your HOMEZ" />
+        <input className='bookHomez' type="submit" value="Book your HOMEZ" />
       </form>
     );
   }

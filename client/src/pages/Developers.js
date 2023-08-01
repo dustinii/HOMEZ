@@ -5,7 +5,7 @@ function Developers () {
     return (
         <div>
             <HomezNavbar />
-            <h1>Meet the Developers</h1>
+            <h1>We're not just your HOMEZ, we're your friends</h1>
             <p></p>
         </div>
     );
