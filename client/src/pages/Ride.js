@@ -1,13 +1,13 @@
 import React from 'react';
 import HomezNavbar from '../components/Navbar';
 
-function Home () {
+function Ride () {
     return (
         <div>
             <HomezNavbar />
-            <h1>Home Page</h1>
+            <h1>Ride Page</h1>
         </div>
     );
 }
 
-export default Home;
+export default Ride;
