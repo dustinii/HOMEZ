@@ -1,5 +1,4 @@
-const Homie = require('./Homie');
-const Ride = require('./Ride');
-const User = require('./User');
+const Rider = require('./Rider');
+const HomezUser = require('./HomezUser');
 
-module.exports = { Homie, Ride, User };
+module.exports = { Rider, HomezUser};
