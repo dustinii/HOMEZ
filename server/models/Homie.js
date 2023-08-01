@@ -1,4 +1,5 @@
 const { Schema } = require('mongoose');
+const rideSchema = require('./Ride');
 
 const homieSchema = new Schema({
   origin: {
@@ -18,6 +19,8 @@ const homieSchema = new Schema({
   price: {
     type: Number,
   },
+  rides: [rideSchema]
+  
   
 });
 
