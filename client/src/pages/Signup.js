@@ -25,7 +25,7 @@ const SignupHomez = () => {
               <Form.Control type="password" placeholder="Enter a password" />
             </Form.Group>
           </Row>
-    
+        
           <Form.Group className="mb-3" controlId="formGridAddress1">
             <Form.Label>Address</Form.Label>
             <Form.Control placeholder="1234 Main St" />

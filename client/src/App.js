@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Ride from "./pages/Ride";
 import Drive from "./pages/Drive";
+// import Reviews from "./pages/Reviews";
 import Footer from "./components/Footer";
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/ride" element={<Ride />} />
           <Route path="/drive" element={<Drive />} />
+          {/* <Route path="/reviews" element={<Reviews />} /> */}
         </Routes>
 
         <Footer />

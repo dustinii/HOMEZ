@@ -12,6 +12,7 @@ const HomezNavbar = () => {
                     <Nav.Link as={Link} to="/ride">Ride</Nav.Link>
                     <Nav.Link as={Link} to="/drive">Drive</Nav.Link>
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    {/* <Nav.Link as={Link} to="/reviews">Reviews</Nav.Link> */}
                     {/* Put this under about */}
                     {/* <Nav.Link as={Link} to="/developers">Developers</Nav.Link> */}
                 </Nav>
