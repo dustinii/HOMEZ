@@ -20,8 +20,14 @@ const riderSchema = new Schema(
       type: String,
       required: true,
     },
-   
-   
+    // account_type: {
+    //   type: String,
+    //   enum: ['rider', 'homezuser'],
+    // }
+    // isRider: {
+    //   type: Boolean,
+    //   default: true,
+    // }
   },
   // set this to use virtual below
   {

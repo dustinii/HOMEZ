@@ -35,10 +35,10 @@ const HomezNavbar = () => {
         </Navbar.Collapse>
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
           <Form>
-            <Button className="navBtn" variant="outline-success">
+            <Button as={Link} to="/login" className="navBtn" variant="outline-success">
               Log in
             </Button>
-            <Button className="navBtn" variant="outline-success">
+            <Button as={Link} to="/signup" className="navBtn" variant="outline-success">
               Sign up
             </Button>
           </Form>
