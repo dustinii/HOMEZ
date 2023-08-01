@@ -1,39 +1,39 @@
-import decode from 'jwt-decode'
+import decode from 'jwt-decode';
 
 class AuthService {
-    getprofile(){
-        return decode(this.getToken());
-    }
+  getProfile() {
+    return decode(this.getToken());
+  }
 
-    loggedIn(){
-        const token = this.getToken();
-        return !!token && !this.isTokenExpired(token);
-    }
+  loggedIn() {
+    const token = this.getToken();
+    return token && !this.isTokenExpired(token) ? true : false;
+  }
 
-    isTokenExpired(token){
-        try{
-            const decoded = decode(token);
-            if(decoded.exp < Date.now() / 1000) {
-                return true;
-            } else return false;
-        } catch(err){
-            return false;
-        }
+  isTokenExpired(token) {
+    const decoded = decode(token);
+    
+    if (decoded.exp < Date.now() / 1000) {
+      localStorage.removeItem('id_token');
+      return true;
     }
+    
+    return false;
+  }
 
-    getToken(){
-        return localStorage.getItem('id_token');
-    }
+  getToken() {
+    return localStorage.getItem('id_token');
+  }
 
-    login(idToken){
-        localStorage.setItem('idToken',idToken);
-        window.location.assign('/')
+  login(idToken) {
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
+  }
 
-    }
-    logout(){
-        localStorage.removeItem('idToken')
-        window.location.reload();
-    }
+  logout() {
+    localStorage.removeItem('id_token');
+    window.location.reload();
+  }
 }
 
 export default new AuthService();
