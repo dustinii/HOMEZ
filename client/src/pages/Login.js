@@ -9,7 +9,7 @@ const LoginHomez = () => {
 
             <Container>
 
-                <h1>Login</h1>
+                <h1 className='loginTitle'>Welcome Back to HOMEZ</h1>
 
                 <Form>
                     <Form.Group className="mb-3" controlId="formGroupUsername">
