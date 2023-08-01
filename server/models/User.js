@@ -2,7 +2,8 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 
-const HomezUserSchema = new Schema(
+
+const userSchema = new Schema(
   {
     username: {
       type: String,
@@ -19,7 +20,11 @@ const HomezUserSchema = new Schema(
       type: String,
       required: true,
     },
-    
+   role: {
+    type: String,
+    enum: ['rider', 'homezuser']
+   }
+   
   },
   // set this to use virtual below
   {
@@ -29,8 +34,8 @@ const HomezUserSchema = new Schema(
   }
 );
 
-// hash user password
-HomezUserSchema.pre('save', async function (next) {
+// hash rider password
+userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -40,12 +45,12 @@ HomezUserSchema.pre('save', async function (next) {
 });
 
 // custom method to compare and validate password for logging in
-HomezUserSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
 
 
-const HomezUser = model('HomezUser', HomezUserSchema);
+const User = model('User', userSchema);
 
-module.exports = HomezUser;
+module.exports = User;
