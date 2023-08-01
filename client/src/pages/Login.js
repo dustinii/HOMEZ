@@ -8,7 +8,7 @@ import HomezNavbar from '../components/Navbar';
 
 const LoginHomez = () => {
 
-    const [userFormData, setUserFormData] = useState(({ email: '', password: '' }))
+    const [userFormData, setUserFormData] = useState(({ username: '', password: '' }))
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
     const [login, { error }] = useMutation(LOGIN_HOMEZ);
@@ -46,7 +46,7 @@ const LoginHomez = () => {
         }
 
         setUserFormData({
-            email: '',
+            username: '',
             password: '',
         });
     };
