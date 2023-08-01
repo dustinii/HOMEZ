@@ -1,22 +1,38 @@
 [
     {
-        "username": "john_doe",
-        "email": "john.doe@example.com",
-        "password": "password123"
-    },
-    {
-        "username": "jane_smith",
-        "email": "jane.smith@example.com",
-        "password": "safepass456"
-    },
-    {
-        "username": "alex_brown",
-        "email": "alex.brown@example.com",
-        "password": "securepassword"
-    },
-    {
-        "username": "emily_johnson",
-        "email": "emily.johnson@example.com",
-        "password": "strongpass789"
-    }
+  "origin": "New York",
+  "destination": 1627728000,
+  "timeForDeparture": 1628000000,
+  "price": 200
+},
+{
+  "origin": "Los Angeles",
+  "destination": 1627814400,
+  "timeForDeparture": 1628086400,
+  "price": 180
+},
+{
+  "origin": "Chicago",
+  "destination": 1627900800,
+  "timeForDeparture": 1628169600,
+  "price": 150
+},
+{
+  "origin": "San Francisco",
+  "destination": 1627987200,
+  "timeForDeparture": 1628256000,
+  "price": 220
+},
+{
+  "origin": "Miami",
+  "destination": 1628073600,
+  "timeForDeparture": 1628342400,
+  "price": 190
+},
+{
+  "origin": "Seattle",
+  "destination": 1628160000,
+  "timeForDeparture": 1628433600,
+  "price": 170
+}
 ]
