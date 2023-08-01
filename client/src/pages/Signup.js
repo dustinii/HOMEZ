@@ -58,6 +58,9 @@ const SignupHomez = () => {
     return (
       <>
           <HomezNavbar />
+
+          <Container>
+
           <h1>Sign Up</h1>
 
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -94,6 +97,7 @@ const SignupHomez = () => {
     
           <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
         </Form>
+        </Container>
         </>
       );
 } 
