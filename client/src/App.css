@@ -44,9 +44,30 @@
     margin: 50px 50px 0 50px;
 }
 
-.mapForm {
+label {
+    display: block;
+    text-align: center;
+  }
 
-}
+.mapForm {
+    text-align: center;
+  }
+
+ .bookHomez {
+    text-align: center;
+    color: #4CAF50;
+    background-color: white;
+    border: solid #4CAF50;
+    border-radius: 5px;
+ } 
+
+ .getStarted {
+    text-align: center;
+    color: #4CAF50;
+    background-color: white;
+    border: solid #4CAF50;
+    border-radius: 5px;
+ }
 
 .homeTitle {
     text-align: center;
@@ -83,13 +104,46 @@
     margin-bottom: 50px;
 }
 
+.laSkyline {
+    width: 100%;
+}
+
 .footer {
-    position: fixed;
+    position: static;
     left: 0;
+    padding-bottom: 5px;
     bottom: 0;
     width: 100%;
     background-color: #1a1a1a;
     color: white;
     text-align: center;
 }
+
+.footer p {
+    padding-top: 10px;
+}
+
+.behindWheel {
+    width: 100%;
+}
+
+.rideParagraph {
+    color: #1a1a1a;
+    padding: 20px;  
+    border-radius: 10px;
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    background: rgba(255,255,255,0.7);
+
+}
+
+.imageTextContainer {
+    position: relative;
+  }
+  
+  .rideParagraph {
+    top: 20%;
+    right: 10%;
+  }
   
