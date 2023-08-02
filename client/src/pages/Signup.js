@@ -1,23 +1,77 @@
-import React from 'react';
-import { Button, Form, Col, Row, Container } from 'react-bootstrap';
+import React, { useState, useEffect }  from 'react';
+import { useMutation } from '@apollo/client';
+import { Button, Form, Col, Alert } from 'react-bootstrap';
+import { ADD_HOMEZ } from '../utils/mutations';
+import Auth from '../utils/auth'
 // import HomezNavBar
 import HomezNavbar from '../components/Navbar';
 
 
 const SignupHomez = () => {
-  return (
-    <>
-    <HomezNavbar />
 
-    <Container>
+  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: ''}))
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [addHomezUser, { error }] = useMutation(ADD_HOMEZ);
+  
+  useEffect(() => {
+    if (error) {
+      setShowAlert(true);
+    } else{
+      setShowAlert(false)
+    }
+  }, [error]);
 
-    
-      
-      <h1>Sign Up</h1>
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({...userFormData, [name] : value})
+  };
 
-      <Form>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridFirstName">
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    if(form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try{
+      const { data } = await addHomezUser({
+        variables: { ...userFormData },
+      });
+      console.log(data)
+      Auth.login(data.addHomezUser.token)
+    } catch(err){
+      console.log(error)
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
+
+
+
+    return (
+      <>
+          <HomezNavbar />
+          <h1 className='signupTitle'>Register with HOMEZ: For Worry-Free Nights Out</h1>
+
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <div className='signupForm'>
+          <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Something went wrong with your signup</Alert>
+
+            <Form.Group as={Col} controlId="formGridUsername">
+              <Form.Label>username</Form.Label>
+              <Form.Control type="text" placeholder="Enter your username" name="username" onChange={handleInputChange} value={userFormData.username} required/>
+              <Form.Control.Feedback type="invalid">username is required!</Form.Control.Feedback>
+            </Form.Group>
+ 
+
+                <Form.Group as={Col} controlId="formGridFirstName">
             <Form.Label>First Name</Form.Label>
             <Form.Control type="text" placeholder="Enter first name" />
           </Form.Group>
@@ -27,57 +81,24 @@ const SignupHomez = () => {
             <Form.Control type="text" placeholder="Enter last name" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control type="username" placeholder="Enter username" />
-          </Form.Group>
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter email"  name="email" onChange={handleInputChange} value={userFormData.email} required/>
+              <Form.Control.Feedback type="invalid">email is required!</Form.Control.Feedback>
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter a password" />
-          </Form.Group>
-        </Row>
-
-        {/* <Form.Group className="mb-3" controlId="formGridAddress1">
-          <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Label>Address 2</Form.Label>
-          <Form.Control placeholder="Apartment, studio, or floor" />
-        </Form.Group>
-
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>City</Form.Label>
-            <Form.Control />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>State</Form.Label>
-            <Form.Select defaultValue="Choose...">
-              <option>Choose...</option>
-              <option>...</option>
-            </Form.Select>
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control />
-          </Form.Group>
-        </Row>
-
-        <Form.Group className="mb-3" id="formGridCheckbox">
-
-        </Form.Group> */}
-
-        <Button className="SignupBtn" variant="outline-success">Submit Homez!</Button>
-      </Form>
-    </Container>
-</>
-
-  );
-}
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter a password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
+              <Form.Control.Feedback type="invalid">password is required!</Form.Control.Feedback>
+            </Form.Group>
+    
+          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+          </div>
+        </Form>
+        
+        </>
+      );
+} 
 
 export default SignupHomez;

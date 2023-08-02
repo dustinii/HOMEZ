@@ -8,7 +8,22 @@ const typeDefs = gql`
     username: String!
     email: String!
     role: String!
+  }
+
+  type Rider {
+    _id: ID!
+    username: String!
+    email: String!
+    role: String!
+    role: String!
    
+  }
+
+  type Homez {
+    _id: ID!
+    username: String!
+    email: String!
+    role: String!
   }
   type Homez {
     _id: ID!
@@ -19,11 +34,13 @@ const typeDefs = gql`
   
 
   type rideInformation {
-    
-    user: User.role.rider
+    user: User
     price: Int!
+    
+    
     origin: String!
     destination: String!
+    timeForDeparture: Int!
     timeForDepartture: Int!
 
   }
@@ -44,12 +61,15 @@ rides : [rideInformation!]
     login(email: String!, password: String!): Auth
     addRider(username: String!, email: String!, password: String!): Auth
     addHomezUser(username: String!, email: String!, password: String!): Auth
+    postRideInformation(userID: ID,
+      price: Int!,
 
     bookRide(userID: ID,
       price: Int!,
       origin: String!,
       destination: String!,
-      timeForDeparture: Int!): ID!
+      origin: String!,
+      timeForDeparture: Int!): Rider
   }
 
   postRideInformation(userID: ID,
@@ -61,8 +81,8 @@ rides : [rideInformation!]
 type Subscription {
     rides: [rideInformation!]
   }
+`
 
 
-`;
 
 module.exports = typeDefs;
