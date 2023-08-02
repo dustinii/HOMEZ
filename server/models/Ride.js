@@ -22,4 +22,6 @@ const rideSchema = new Schema({
   
 });
 
-module.exports = rideSchema;
+const Ride = model('Ride', rideSchema);
+
+module.exports = Ride;

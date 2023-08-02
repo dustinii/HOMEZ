@@ -2,7 +2,7 @@ const { signToken } = require('../utils/auth');
 // going to need this for the login and signup mutations.
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
-
+const { Ride } = require('../models');
 const rides = [];
 
 const resolvers = {
@@ -23,6 +23,8 @@ const resolvers = {
         }
         throw new AuthenticationError('You need to be logged in!');
       },
+
+  
 
 // return rides information
 rides: () => rides,
@@ -75,10 +77,24 @@ rides: () => rides,
   
         return { token, homez };
       },
+          // create ride information
+
+          createRides: async (parent, {input}, context) => {
+            if (context.riderID) {
+              const rideData = await Ride.create(
+                { _id: context.riderID._id },
+                { $addToSet: {orgin: input, destination: input, price: input, timeForDeparture:input}},
+                {new: true}
+                )
+              return rideData;
+            }
+            throw new AuthenticationError('Cant find any rides!');
+          },
       
       // post ride information
       postRideInformation: (parent, {user, price, destination, origin, timeForDeparture }) => {
 
+        
       }
       
       

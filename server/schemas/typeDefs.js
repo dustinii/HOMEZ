@@ -3,22 +3,28 @@ const { gql } = require('apollo-server-express');
 const { GraphQLServer, PubSub } = require("graphql-yoga");
 
 const typeDefs = gql`
-  type User {
+  type Rider {
     _id: ID!
     username: String!
     email: String!
+    role: String!
    
   }
-  
+  type Homez {
+    _id: ID!
+    username: String!
+    email: String!
+    role: String!
+  }
   
 
   type rideInformation {
-    token: ID!
+    
     user: User.role.rider
-    price: Number!
+    price: Int!
     origin: String!
     destination: String!
-    timeForDepartture: Number!
+    timeForDepartture: Int!
 
   }
 
@@ -29,8 +35,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    meAsRider: User.role.rider
-    meAsHomez: User.role.homez
+    meAsRider: Rider
+    meAsHomez: Homez
 rides : [rideInformation!]
   }
 
@@ -39,12 +45,19 @@ rides : [rideInformation!]
     addRider(username: String!, email: String!, password: String!): Auth
     addHomezUser(username: String!, email: String!, password: String!): Auth
 
-    bookRide(user: User.role.rider,
-      price: Number!,
+    bookRide(userID: ID,
+      price: Int!,
       origin: String!,
       destination: String!,
-      timeForDepartture: Number!): ID!
+      timeForDeparture: Int!): ID!
   }
+
+  postRideInformation(userID: ID,
+    price: Int!,
+    origin: String!,
+    destination: String!,
+    timeForDeparture: Int!): ID!
+}
 type Subscription {
     rides: [rideInformation!]
   }

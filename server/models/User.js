@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const rideSchema = require('./Ride');
 
 
 
@@ -23,7 +24,8 @@ const userSchema = new Schema(
    role: {
     type: String,
     enum: ['rider', 'homezuser']
-   }
+   },
+   rides: [rideSchema]
    
   },
   // set this to use virtual below
