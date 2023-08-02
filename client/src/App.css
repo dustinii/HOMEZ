@@ -1,7 +1,6 @@
 .navBar {
     overflow: hidden;
     background-color: #1a1a1a;
-    /* position: fixed; */
     top: 0;
     width: 100%;
     z-index: 1;
@@ -31,17 +30,37 @@
     margin-right: 5px;
 }
 
-.aboutTitle {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.aboutContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
 }
+
+.aboutImg {
+    width: 100%;
+    height: auto;
+}
+
+.aboutTitle {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 .aboutText {
     text-align: center;
     font-size: 20px;
-    margin: 50px 50px 0 50px;
+    margin: 50px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: white;
 }
 
 label {
@@ -67,13 +86,27 @@ label {
     background-color: white;
     border: solid #4CAF50;
     border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
  }
+
+    .bookHomez:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .getStarted:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
 
 .homeTitle {
     text-align: center;
     font-size: 40px;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-weight: bolder;
 }
 
 .signupTitle {
@@ -135,6 +168,7 @@ label {
     height: 60%;
     position: absolute;
     background: rgba(255,255,255,0.7);
+    font-weight: bold;
 
 }
 
@@ -186,3 +220,24 @@ label {
     margin: 0;
   }
   
+  .blazeIt {
+    background-color: black;
+    padding: 20px;
+  }
+
+  .blazeItText {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
+    height: 50%;
+    width: 25%;
+    font-size: 30px;
+    text-align: left;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-left: 22px;
+  }
+
+  .blazeItText p {
+    margin: 10px;
+  }

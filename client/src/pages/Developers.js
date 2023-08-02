@@ -30,32 +30,32 @@ function Developers() {
         <div className="developer">
           <img src="placeholder-image1.jpg" alt="Developer 1" />
           <h2>Joceliyn Valdez</h2>
-          <p>This is a short bio for Developer 1.</p>
+          <p>This is a short bio for Developer 3.</p>
         </div>
         <div className="developer">
           <img src="placeholder-image2.jpg" alt="Developer 2" />
           <h2>Samuel Rey</h2>
-          <p>This is a short bio for Developer 2.</p>
+          <p>This is a short bio for Developer 4.</p>
         </div>
         <div className="developer">
           <img src="placeholder-image1.jpg" alt="Developer 1" />
           <h2>Brian Autieri</h2>
-          <p>This is a short bio for Developer 1.</p>
+          <p>This is a short bio for Developer 5.</p>
         </div>
         <div className="developer">
           <img src="placeholder-image2.jpg" alt="Developer 2" />
           <h2>Joel Estrada</h2>
-          <p>This is a short bio for Developer 2.</p>
+          <p>This is a short bio for Developer 6.</p>
         </div>
         <div className="developer">
           <img src="placeholder-image1.jpg" alt="Developer 1" />
           <h2>Kin Ho</h2>
-          <p>This is a short bio for Developer 1.</p>
+          <p>This is a short bio for Developer 7.</p>
         </div>
         <div className="developer">
           <img src="placeholder-image2.jpg" alt="Developer 2" />
           <h2>Mauricio Ortiz</h2>
-          <p>This is a short bio for Developer 2.</p>
+          <p>This is a short bio for Developer 8.</p>
         </div>
       </div>
     </div>
