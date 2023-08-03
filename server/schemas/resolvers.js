@@ -2,6 +2,7 @@ const { signToken } = require('../utils/auth');
 // going to need this for the login and signup mutations.
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Ride, Homez } = require('../models');
+const dayjs = require('dayjs');
 
 const rides = [];
 
@@ -69,16 +70,22 @@ const resolvers = {
       return { token, user };
     },
    
-     postRide: async (parent, args, context) => {
+    postRide: async (parent, args, context) => {
       if (context.user) {
-    
-        const newRide = await Ride.create({...args, riderId: context.user._id})
+        // Use Day.js to format the timeForDeparture field
+        const formattedTimeForDeparture = dayjs.unix(args.timeForDeparture).format('YYYY-MM-DD HH:mm:ss');
+        
+        // Create the ride with the formatted timeForDeparture
+        const newRide = await Ride.create({
+          ...args,
+          riderId: context.user._id,
+          timeForDeparture: formattedTimeForDeparture, // Use the formatted timeForDeparture
+        });
+
         return newRide;
       }
-     }
-
-
-  },
+    }
+  }
 };
 
 module.exports = resolvers;

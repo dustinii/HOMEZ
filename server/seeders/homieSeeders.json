@@ -1,0 +1,42 @@
+[
+  {
+    "homie_usrnme_1": "John",
+    "homie_usrnme_2": "Alice",
+    "rides": ["ride_id_1", "ride_id_2", "ride_id_3"]
+  },  
+  {
+    "homie_usrnme_1": "Bob",
+    "homie_usrnme_2": "Eve",
+    "rides": ["ride_id_4", "ride_id_5"]
+  },
+  {
+    "homie_usrnme_1": "Mike",
+    "homie_usrnme_2": "Sarah",
+    "rides": ["ride_id_6"]
+  },
+  {
+    "homie_usrnme_1": "Chris",
+    "homie_usrnme_2": "Olivia",
+    "rides": []
+  },
+  {
+    "homie_usrnme_1": "David",
+    "homie_usrnme_2": "Emma",
+    "rides": ["ride_id_7"]
+  },
+  {
+    "homie_usrnme_1": "Tom",
+    "homie_usrnme_2": "Lily",
+    "rides": ["ride_id_8", "ride_id_9"]
+  },
+  {
+    "homie_usrnme_1": "Alex",
+    "homie_usrnme_2": "Sophia",
+    "rides": ["ride_id_10", "ride_id_11", "ride_id_12"]
+  },
+  {
+    "homie_usrnme_1": "Kevin",
+    "homie_usrnme_2": "Grace",
+    "rides": ["ride_id_13"]
+  }
+]
