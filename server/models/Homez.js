@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const rideSchema = require('./Ride');
 
 // these are your driver teams. their id will go in the driverId on Ride:
 const homezSchema = new Schema(
@@ -32,7 +33,7 @@ const homezSchema = new Schema(
 );
 
 homezSchema.virtual('rideCount').get(function () {
-  return this.rides.length;
+  return this.rides.length;  
 });
 
 const Homez = model('Homez', homezSchema);

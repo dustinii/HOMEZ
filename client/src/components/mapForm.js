@@ -1,34 +1,47 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
+// import two things,BOOK_RIDE and useMutation from apollo/client
 
 const MapForm = ({ handleInputFocus }) => {
-    const [time, setTime] = useState('');
-  
-    const handleTimeChange = (event) => {
-      setTime(event.target.value);
+    // const { bookRide } = useMutation(BOOK_RIDE);
+
+    const [ formState, setFormState] = useState({
+        origin: '',
+        destination: '',
+        time: ''
+    });
+
+    const handleChange = (event) => {
+        const { name, value} = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value
+        })
     }
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Origin:', event.target.origin.value);
-      console.log('Destination:', event.target.destination.value);
-      console.log('Time of Ride:', time);
+        console.table(formState);
+
+        // bookRide();
     }
   
     return (
       <form onSubmit={handleSubmit}>
         <label>
           Origin:
-          <input type="text" name="origin" onFocus={() => handleInputFocus('origin')} />
+          <input type="text" name="origin" value={formState.origin} onChange={handleChange} onFocus={() => handleInputFocus('origin')} />
         </label>
         <label>
           Destination:
-          <input type="text" name="destination" onFocus={() => handleInputFocus('destination')} />
+          <input type="text" name="destination" value={formState.destination} onChange={handleChange} onFocus={() => handleInputFocus('destination')} />
         </label>
         <label>
           Time of Ride:
-          <input type="datetime-local" name="time" value={time} onChange={handleTimeChange} />
+          <input type="datetime-local" name="time" value={formState.time} onChange={handleChange} />
         </label>
-        <input type="submit" value="Get Directions" />
+        <input className='bookHomez' type="submit" value="Book your HOMEZ" />
       </form>
     );
   }

@@ -42,54 +42,52 @@ const resolvers = {
       console.log("all users")
       return await User.find({})
     }
-
   },
-
   Mutation: {
     addUser: async (parent, args) => {
       const rider = await User.create(args);
       const token = signToken(rider);
       return { token, rider };
     },
-    createTeam: async (parent, args)=> {
+    createTeam: async (parent, args) => {
       const team = Homez.create(args)
       return team;
     },
     // login rider
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
       if (!user) {
         throw new AuthenticationError('No user found');
       }
-
       const correctPw = await user.isCorrectPassword(password);
-
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
-
       const token = signToken(user);
-
       return { token, user };
     },
-   
     postRide: async (parent, args, context) => {
       if (context.user) {
         // Use Day.js to format the timeForDeparture field
         const formattedTimeForDeparture = dayjs.unix(args.timeForDeparture).format('YYYY-MM-DD HH:mm:ss');
-        
         // Create the ride with the formatted timeForDeparture
         const newRide = await Ride.create({
           ...args,
           riderId: context.user._id,
           timeForDeparture: formattedTimeForDeparture, // Use the formatted timeForDeparture
         });
-
         return newRide;
       }
     }
   }
 };
-
 module.exports = resolvers;
+
+
+
+
+
+
+
+
+

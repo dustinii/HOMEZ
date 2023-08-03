@@ -16,10 +16,10 @@ const rideSchema = new Schema({
   price: {
     type: Number,
   },
-  homezTeamId: {                                // <<<-------HERE
+  homezTeamId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-  },
+  },       
   riderID: {
     type: Schema.Types.ObjectId,
     ref: 'User',

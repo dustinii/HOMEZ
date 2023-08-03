@@ -31,6 +31,10 @@ const HomezNavbar = () => {
             <Nav.Link as={Link} to="/developers">
               Developers
             </Nav.Link>
+            {/* Reviews link */}
+            {/* <Nav.Link as={Link} to="/reviews">
+              Reviews
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">

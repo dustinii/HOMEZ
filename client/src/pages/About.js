@@ -1,11 +1,16 @@
 import React from "react";
 import HomezNavbar from "../components/Navbar";
+import aboutImg from "../images/aboutImg.jpg";
 
 function About() {
   return (
     <div>
       <HomezNavbar />
-      <h1 className="aboutTitle"> How HOMEZ is Shaping Responsible Transportation</h1>
+      <div className="aboutContainer">
+    <img className="aboutImg" src={aboutImg} alt="About" />
+    <h1 className="aboutTitle">How HOMEZ is Shaping Responsible Transportation</h1>
+</div>
+
       <p className="aboutText">
         Welcome to HOMEZ, your ultimate solution for responsible transportation.
         We've drawn inspiration from the functionality of popular ride-sharing

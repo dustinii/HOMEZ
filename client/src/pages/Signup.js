@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import { useMutation } from '@apollo/client';
-import { Button, Form, Col, Row, Alert, Container } from 'react-bootstrap';
+import { Button, Form, Col, Alert } from 'react-bootstrap';
 import { ADD_HOMEZ } from '../utils/mutations';
 import Auth from '../utils/auth'
 // import HomezNavBar
@@ -58,14 +58,15 @@ const SignupHomez = () => {
     return (
       <>
           <HomezNavbar />
-          <h1>Sign Up</h1>
+          <h1 className='signupTitle'>Register with HOMEZ: For Worry-Free Nights Out</h1>
 
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <div className='signupForm'>
           <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Something went wrong with your signup</Alert>
 
-            <Form.Group as={Col} controlId="formGridFirstName">
+            <Form.Group as={Col} controlId="formGridUsername">
               <Form.Label>username</Form.Label>
-              <Form.Control type="text" placeholder="Enter first name" name="username" onChange={handleInputChange} value={userFormData.username} required/>
+              <Form.Control type="text" placeholder="Enter your username" name="username" onChange={handleInputChange} value={userFormData.username} required/>
               <Form.Control.Feedback type="invalid">username is required!</Form.Control.Feedback>
             </Form.Group>
  
@@ -93,7 +94,9 @@ const SignupHomez = () => {
             </Form.Group>
     
           <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+          </div>
         </Form>
+        
         </>
       );
 } 
