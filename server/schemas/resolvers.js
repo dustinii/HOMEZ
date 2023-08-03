@@ -2,7 +2,7 @@ const { signToken } = require('../utils/auth');
 // going to need this for the login and signup mutations.
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Ride, Homez } = require('../models');
-const dayjs = require('dayjs');
+// const dayjs = require('dayjs');
 
 const rides = [];
 
@@ -37,6 +37,10 @@ const resolvers = {
     // return all rides
     rides: () => {
       return Ride.find({})
+    },
+    allusers: async (_, args, context) => {
+      console.log("all users")
+      return await User.find({})
     }
 
   },

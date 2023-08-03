@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server-express");
 
-const { GraphQLServer, PubSub } = require("graphql-yoga");
+// const { GraphQLServer, PubSub } = require("graphql-yoga");
 
 const typeDefs = gql`
   type User {
@@ -44,6 +44,7 @@ const typeDefs = gql`
     homezTeam: Homez
     # query all rides
     rides: [Ride]
+    allusers: [User]
 
   }
 
