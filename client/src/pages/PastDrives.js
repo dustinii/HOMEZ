@@ -8,6 +8,8 @@ const PastDrives = () => {
     return (
     <>
     <HomezNavbar />
+    <h1 className='PastDrivesTitle'>Your Past Drives</h1>
+    <h2 className='PastDrivesSubTitle'>See where you've been!</h2>
     <div
       aria-live="polite"
       aria-atomic="true"
