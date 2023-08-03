@@ -1,27 +1,41 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const rideSchema = require('./Ride');
 
-const homieSchema = new Schema({
-  origin: {
-    type: String,
-    required: true,
-  },
+// these are your driver teams. their id will go in the driverId on Ride:
+const homezSchema = new Schema(
+  {
+   
+    homie_usrnme_1: {
+      type: String,
+      required: true,
 
-  destination: {
-    type: Number,
-    required: true,
+    },
+    homie_usrnme_2: {
+      type: String,
+      required: true,
+
+    },
+
+    rides: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Ride',
+      },
+    ],
+   
   },
- 
-  timeForDeparture: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: Number,
-  },
-  rides: [rideSchema]
-  
-  
+  {
+    toJSON: {
+      virtuals: true,
+    },
+   id: false
+  }
+);
+
+homezSchema.virtual('rideCount').get(function () {
+  return this.rides.length;  
 });
 
-module.exports = homieSchema;
+const Homez = model('Homez', homezSchema);
+
+module.exports = Homez;
