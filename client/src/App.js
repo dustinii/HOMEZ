@@ -11,6 +11,8 @@ import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import LoginHomez from "./pages/Login"
 import SignupHomez from "./pages/Signup";
+import { setContext } from '@apollo/client/link/context';
+
 
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";

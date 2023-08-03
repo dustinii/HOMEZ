@@ -15,7 +15,7 @@ const resolvers = {
         }
         throw new AuthenticationError('You need to be logged in!');
       },
-// find homez user
+      // find homez user
       meAsHomez: async (parent, args, context) => {
         if (context.homez) {
           const homezData = await User.role.homezuser.findOne({ _id: context.homez._id }).select('-__v -password');
