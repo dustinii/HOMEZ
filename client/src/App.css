@@ -193,10 +193,24 @@ label {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
   }
   
-  .developer img {
+  
+  .developerImg {
     width: 100%;
     height: auto;
   }
+
+  .developerTitle {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+}
+
   
   .developer h2 {
     margin: 10px 0;
@@ -210,10 +224,12 @@ label {
   .devIntro {
     background-color: #f5f5f5;
     padding: 20px;
-    margin: 20px;
+    margin: 20px 100px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-align: center;
-    width: 75%;
+    width: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
   }
   
   .devIntro p {
