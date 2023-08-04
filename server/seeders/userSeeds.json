@@ -1,0 +1,50 @@
+[
+    {
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "password": "password123",
+        "role": "rider"
+      },
+      {
+        "username": "jane_smith",
+        "email": "jane.smith@example.com",
+        "password": "safepass456",
+        "role": "homezuser"
+      },
+      {
+        "username": "alex_brown",
+        "email": "alex.brown@example.com",
+        "password": "securepassword",
+        "role": "rider"
+      },
+      {
+        "username": "emily_johnson",
+        "email": "emily.johnson@example.com",
+        "password": "strongpass789",
+        "role": "homezuser"
+      },
+      {
+        "username": "michael_smith",
+        "email": "michael.smith@example.com",
+        "password": "secret123",
+        "role": "rider"
+      },
+      {
+        "username": "sarah_jones",
+        "email": "sarah.jones@example.com",
+        "password": "sarahpass",
+        "role": "rider"
+      },
+      {
+        "username": "adam_davis",
+        "email": "adam.davis@example.com",
+        "password": "adampass",
+        "role": "homezuser"
+      },
+      {
+        "username": "laura_miller",
+        "email": "laura.miller@example.com",
+        "password": "laurapass",
+        "role": "homezuser"
+      } 
+]
