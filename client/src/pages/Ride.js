@@ -1,6 +1,5 @@
-// Ride.js
-
 import React from "react";
+import { Container, Col } from 'react-bootstrap';
 import HomezNavbar from "../components/Navbar";
 import MapForm from "../components/mapForm";
 import { useQuery } from "@apollo/client";
@@ -19,13 +18,26 @@ function Ride() {
   }
 
   return (
-    <div>
+    <>
       <HomezNavbar />
+<<<<<<< HEAD
       {!Auth.loggedIn() ? (
        <Home /> 
        
       ) : (user.role === "rider" ? (<Rider rider={user} />) : (<Driver driver={user} />))}
     </div>
+=======
+      <Container className="d-flex justify-content-center">
+        <Col md={6}>
+          <h1 className='text-center' style={{ marginTop: '50px' }}>Have a Seat,</h1>
+          <h1 className='text-center' style={{ marginBottom: '50px' }}>HOMEZ Will Take the Wheel</h1>
+          <div>
+            <MapForm handleInputFocus={handleInputFocus} />
+          </div>
+        </Col>
+      </Container>
+    </>
+>>>>>>> main
   );
 }
 
