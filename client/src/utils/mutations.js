@@ -78,3 +78,19 @@ export const ADD_HOMEZ = gql`
   }
 `;
 
+export const COMPLETE_RIDE = gql`
+  mutation completeRide($newRide: inputRide!) {
+    completeRide(newRide: $newRide) {
+      _id
+      username
+      email
+      completeRides {
+        rideId
+        price
+        destination
+        origin
+        timeForDeparture
+      }
+    }
+  }
+`;

@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const rideSchema = new Schema({
+  rideId: {
+    type: String,
+    required: true,
+  },
+  
   origin: {
     type: String,
     required: true,
