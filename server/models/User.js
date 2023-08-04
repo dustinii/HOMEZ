@@ -21,7 +21,7 @@ const userSchema = new Schema(
       type: String,
       enum: ['rider', 'homezuser']
     },
-    completeRides: [rideSchema],
+    completeRides: [{type: Schema.Types.ObjectId, ref: 'Ride'}],
 
     rides: [{ type: Schema.Types.ObjectId, ref: 'Ride' }]
   },
