@@ -93,7 +93,7 @@ const SignupHomez = () => {
               <Form.Control.Feedback type="invalid">password is required!</Form.Control.Feedback>
             </Form.Group>
     
-          <Button abled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
           </div>
         </Form>
         
