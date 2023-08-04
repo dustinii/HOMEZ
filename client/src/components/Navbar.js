@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -6,10 +6,28 @@ import {
   Form,
   FormControl,
   Container,
+  Modal,
+  Tab,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Auth from "../utils/auth";
+import SignupHomez from "../pages/Signup";
+import LoginHomez from "../pages/Login"
 
 const HomezNavbar = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    if(Auth.loggedIn === true){ 
+    navigate('/ride')
+  } else {
+    setShowModal(true)
+  }
+}
+
   return (
     <Navbar className="navBar">
       <Container fluid={true} className="d-flex">
@@ -19,7 +37,7 @@ const HomezNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-start">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/ride">
+            <Nav.Link onClick={handleClick} to="/ride">
               Ride
             </Nav.Link>
             <Nav.Link as={Link} to="/drive">
@@ -35,16 +53,54 @@ const HomezNavbar = () => {
             {/* <Nav.Link as={Link} to="/reviews">
               Reviews
             </Nav.Link> */}
+            {Auth.loggedIn() ? (
+              <>
+                <Nav.Link onClick={Auth.logout}>logout</Nav.Link>  
+              </>
+            ) : (
+              <Nav.Link onClick={() => setShowModal(true)}>Login/Sign up</Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
           <Form>
-            <Button as={Link} to="/login" className="navBtn" variant="outline-success">
-              Log in
+            <Modal
+        size='xl'
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby='signup-modal'>
+        {/* tab container to do either signup or login component */}
+        <Tab.Container defaultActiveKey='login'>
+          <Modal.Header closeButton>
+              <Nav variant='pills'>
+                <Nav.Item>
+                  <Nav.Link eventKey='login' className="logBtn">Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey='signup'className="signBtn">Sign Up</Nav.Link>
+                </Nav.Item>
+              </Nav>
+          </Modal.Header>
+          <Modal.Body>
+            <Tab.Content>
+              <Tab.Pane eventKey='login'>
+                <LoginHomez handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey='signup'>
+                <SignupHomez handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+            </Tab.Content>
+          </Modal.Body>
+        </Tab.Container>
+      </Modal>
+          {/* <Modal>
+            <Button as={Link} eventKey='login'to="/login" className="navBtn" variant="outline-success">
+              Login
             </Button>
-            <Button as={Link} to="/signup" className="navBtn" variant="outline-success">
+            <Button as={Link} eventKey='signup' to="/signup" className="navBtn" variant="outline-success">
               Sign up
             </Button>
+            </Modal> */}
           </Form>
         </Navbar.Collapse>
       </Container>
