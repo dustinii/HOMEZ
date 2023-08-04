@@ -108,17 +108,6 @@ label {
     margin-bottom: 50px;
 }
 
-.rideTitle {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.laSkyline {
-    width: 100%;
-}
-
 .footer {
     position: static;
     left: 0;
@@ -135,29 +124,27 @@ label {
 }
 
 .behindWheel {
-    width: 100%;
+  width: 100%;
 }
 
 .rideParagraph {
-    color: #1a1a1a;
-    padding: 20px;  
-    border-radius: 10px;
-    width: 30%;
-    height: 60%;
-    position: absolute;
-    background: rgba(255,255,255,0.7);
-    font-weight: bold;
-
+  color: #1a1a1a;
+  padding: 20px;  
+  border-radius: 10px;
+  width: 60%; 
+  background: rgba(255,255,255,0.7);
+  font-weight: bold;
+  position: absolute; 
+  bottom: 10%;
+  right: 10%;
+  overflow: auto; 
 }
 
 .imageTextContainer {
-    position: relative;
-  }
-  
-  .rideParagraph {
-    top: 20%;
-    right: 10%;
-  }
+  position: relative;
+  height: auto; 
+}
+
   
   .developerGrid {
     display: grid;
@@ -245,4 +232,48 @@ label {
     flex-basis: 45%;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.imageOverlay {
+  position: relative;
+}
+
+.laSkyline {
+  width: 100%;
+}
+
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.homeTitle {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
+
+.needARide {
+  position: absolute;
+  bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-left: 20px;
+}
+
+.haveAccount {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cardLink {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
