@@ -109,20 +109,6 @@ label {
     font-weight: bolder;
 }
 
-.signupTitle {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.signupForm {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
 .loginTitle {
     text-align: center;
     font-size: 40px;
@@ -257,3 +243,14 @@ label {
   .blazeItText p {
     margin: 10px;
   }
+
+  .drive-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-drives, .past-drives {
+    flex-basis: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+}
