@@ -8,6 +8,14 @@ import behindWheel from "../images/behindWheel.jpg";
 function Ride() {
   const handleInputFocus = (inputName) => {
     console.log("Focus:", inputName);
+
+    // if (!user.rider.login === true || !user.rider.login === true) {
+    //   <Router>
+    //     <Redirect to="/login" /> <Re
+    //   </Router>
+    //   alert("You must be logged in as a rider to use this feature.")
+
+    // }
   };
 
   return (

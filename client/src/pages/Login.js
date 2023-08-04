@@ -49,6 +49,7 @@ const LoginHomez = () => {
             email: '',
             password: '',
         });
+
     };
  
     return (
@@ -56,6 +57,8 @@ const LoginHomez = () => {
             <HomezNavbar />
 
                 <h1 className='loginTitle'>Welcome Back to HOMEZ</h1>
+
+                <h2 className='loginSubTitle'>Login to your account</h2>
 
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <div className="loginForm">
@@ -73,6 +76,9 @@ const LoginHomez = () => {
                         <Form.Control.Feedback type= "invalid">Incorrect password!</Form.Control.Feedback>
                     </Form.Group>
                     <Button className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
+
+                    <h2 className='loginSubTitle'>Login to your rider account</h2>
+
                     </div>
                 </Form>
         </>
