@@ -75,10 +75,7 @@ const LoginHomez = () => {
                         <Form.Control type="password" placeholder="Enter your password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
                         <Form.Control.Feedback type= "invalid">Incorrect password!</Form.Control.Feedback>
                     </Form.Group>
-                    <Button className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
-
-                    <h2 className='loginSubTitle'>Login to your rider account</h2>
-
+                    <Button abled={!(userFormData.email && userFormData.password)} type="submit" className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
                     </div>
                 </Form>
         </>
