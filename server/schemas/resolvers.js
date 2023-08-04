@@ -78,7 +78,19 @@ const resolvers = {
         });
         return newRide;
       }
-    }
+    },
+
+    completeRide:  async (parent, { newRide }, context) => {
+      if (context.user) {
+        const updatedHomez = await User.findByIdAndUpdate(
+          { _id: context.user._id, role:"homezuser" },
+          { $push: { completeRides: newRide }},
+          { new: true }
+        );
+        return updatedHomez;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   }
 };
 module.exports = resolvers;
