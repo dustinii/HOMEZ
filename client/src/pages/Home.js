@@ -7,7 +7,6 @@ import behindWheel from "../images/behindWheel.jpg";
 function Home() {
   return (
     <div>
-      <HomezNavbar />
       <h1 className="homeTitle">Welcome to HOMEZ: Responsible Ride-Sharing</h1>
       <Link to="/ride">
         <p>Need a ride? Sign up as a passenger</p>
