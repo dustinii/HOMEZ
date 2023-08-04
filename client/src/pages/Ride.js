@@ -24,7 +24,7 @@ function Ride() {
       {!Auth.loggedIn() ? (
        <Home /> 
        
-      ) : ({user.role === "rider" ? (<Rider rider={user} />) : (<Driver driver={user} />) })}
+      ) : (user.role === "rider" ? (<Rider rider={user} />) : (<Driver driver={user} />))}
     </div>
   );
 }
