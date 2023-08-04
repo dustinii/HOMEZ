@@ -28,6 +28,7 @@
 
 .navBtn {
     margin-right: 5px;
+    display: inline-block;
 }
 
 .aboutContainer {
@@ -256,4 +257,23 @@ label {
 
   .blazeItText p {
     margin: 10px;
+  }
+
+  .SignupBtn{
+    margin-top: 33px;
+  }
+
+  .LoginBtn{
+    margin-top: 33px;
+
+  }
+
+  .center{
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .logBtn{
+    width: 500px;
+    margin: 0 auto;
   }

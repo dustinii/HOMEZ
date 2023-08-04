@@ -53,7 +53,6 @@ const LoginHomez = () => {
  
     return (
         <>
-            <HomezNavbar />
 
                 <h1 className='loginTitle'>Welcome Back to HOMEZ</h1>
 
@@ -72,7 +71,7 @@ const LoginHomez = () => {
                         <Form.Control type="password" placeholder="Enter your password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
                         <Form.Control.Feedback type= "invalid">Incorrect password!</Form.Control.Feedback>
                     </Form.Group>
-                    <Button className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
+                    <Button disabled={!(userFormData.email && userFormData.password)} type="submit" variant="outline-success" className="LoginBtn" >Welcome Back Homez!</Button>
                     </div>
                 </Form>
         </>

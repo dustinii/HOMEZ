@@ -57,22 +57,24 @@ export const ADD_RIDER = gql`
   }
 `;
 export const ADD_HOMEZ = gql`
-  mutation addHomezUser(
+  mutation addUser(
     $username: String!
     $email: String!
     $password: String!
+    $role: String!
   ) {
-    addHomezUser(
+    addUser(
       username: $username
       email: $email
       password: $password
+      role: $role
     ) {
       token
       homez {
         _id
         username
         email
-        
+        role
       }
     }
   }

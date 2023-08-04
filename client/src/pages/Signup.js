@@ -4,15 +4,15 @@ import { Button, Form, Col, Alert } from 'react-bootstrap';
 import { ADD_HOMEZ } from '../utils/mutations';
 import Auth from '../utils/auth'
 // import HomezNavBar
-import HomezNavbar from '../components/Navbar';
+// import HomezNavbar from '../components/Navbar';
 
 
 const SignupHomez = () => {
 
-  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: ''}))
+  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: '', role: '', }))
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [addHomezUser, { error }] = useMutation(ADD_HOMEZ);
+  const [addUser, { error }] = useMutation(ADD_HOMEZ);
   
   useEffect(() => {
     if (error) {
@@ -37,11 +37,11 @@ const SignupHomez = () => {
     }
 
     try{
-      const { data } = await addHomezUser({
+      const { data } = await addUser({
         variables: { ...userFormData },
       });
       console.log(data)
-      Auth.login(data.addHomezUser.token)
+      Auth.login(data.addUser.token)
     } catch(err){
       console.log(error)
     }
@@ -50,6 +50,7 @@ const SignupHomez = () => {
       username: '',
       email: '',
       password: '',
+      role: '',
     });
   };
 
@@ -57,7 +58,6 @@ const SignupHomez = () => {
 
     return (
       <>
-          <HomezNavbar />
           <h1 className='signupTitle'>Register with HOMEZ: For Worry-Free Nights Out</h1>
 
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -92,8 +92,14 @@ const SignupHomez = () => {
               <Form.Control type="password" placeholder="Enter a password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
               <Form.Control.Feedback type="invalid">password is required!</Form.Control.Feedback>
             </Form.Group>
-    
-          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Pick One</Form.Label>
+              <Form.Control type="text" placeholder="rider or driver" name="role" onChange={handleInputChange} value={userFormData.role}required/>
+              <Form.Control.Feedback type="invalid">a role is required </Form.Control.Feedback>
+            </Form.Group>
+            
+          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password && userFormData.role)} type="submit" className="SignupBtn" variant="success">Submit Homez!</Button>
           </div>
         </Form>
         
