@@ -66,6 +66,7 @@ const SignupHomez = () => {
             <Form.Group controlId="formGridFirstName" style={{ marginBottom: '20px' }}>
               <Form.Label>username</Form.Label>
               <Form.Control type="text" placeholder="Enter first name" name="username" onChange={handleInputChange} value={userFormData.username} required />
+
               <Form.Control.Feedback type="invalid">username is required!</Form.Control.Feedback>
             </Form.Group>
 

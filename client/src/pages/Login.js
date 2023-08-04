@@ -1,8 +1,58 @@
 import React from 'react';
 import { Form, Button, Container, Col } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { Form, Button, Col, Alert } from 'react-bootstrap';
+import { LOGIN_HOMEZ } from '../utils/mutations';
+import Auth from '../utils/auth';
 import HomezNavbar from '../components/Navbar';
 
+
 const LoginHomez = () => {
+
+    const [userFormData, setUserFormData] = useState(({ email: '', password: '' }))
+    const [validated] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const [login, { error }] = useMutation(LOGIN_HOMEZ);
+
+    useEffect(() => {
+        if (error) {
+            setShowAlert(true);
+        } else {
+            setShowAlert(false)
+        }
+    }, [error]);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name] : value})
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        if(form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        try {
+            const { data } = await login({
+                variables: { ...userFormData },
+            });
+            console.log(data)
+            Auth.login(data.login.token)
+        } catch(err) {
+            console.log(error)
+        }
+
+        setUserFormData({
+            email: '',
+            password: '',
+        });
+    };
+ 
     return (
         <>
             <HomezNavbar />

@@ -1,13 +1,10 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-
-
+const { Schema, model, Types } = require('mongoose');
+const bcrypt = require('bcrypt')
 
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      
       unique: true,
     },
     email: {
@@ -20,11 +17,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-   role: {
-    type: String,
-    enum: ['rider', 'homezuser']
-   }
-   
+    role: {
+      type: String,
+      enum: ['rider', 'homezuser']
+    },
+    completeRides: [{type: Schema.Types.ObjectId, ref: 'Ride'}],
+
+    rides: [{ type: Schema.Types.ObjectId, ref: 'Ride' }]
   },
   // set this to use virtual below
   {
@@ -49,7 +48,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
+userSchema.virtual('rideCount').get(function () {
+  return this.completeRides.length;
+});
 
 const User = model('User', userSchema);
 
