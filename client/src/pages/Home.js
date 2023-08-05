@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomezNavbar from "../components/Navbar";
+// import HomezNavbar from "../components/Navbar";
 import laSkyline from "../images/laSkyline.jpg";
 import behindWheel from "../images/behindWheel.jpg";
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -8,17 +8,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 function Home() {
   return (
     <div>
-<<<<<<< HEAD
-      <h1 className="homeTitle">Welcome to HOMEZ: Responsible Ride-Sharing</h1>
-      <Link to="/ride">
-        <p>Need a ride? Sign up as a passenger</p>
-      </Link>
-      <Link to="/login">
-        <p>Already have an account? Sign in</p>
-      </Link>
-      <img className="laSkyline" src={laSkyline} alt="Los Angeles Skyline" />
-=======
-      <HomezNavbar />
+      {/* <HomezNavbar /> */}
       <div className="imageOverlay">
   <img className="laSkyline" src={laSkyline} alt="Los Angeles Skyline" />
   <Container fluid className="overlayContainer text-center">
@@ -47,7 +37,6 @@ function Home() {
 </Card>
 
 
->>>>>>> main
       <section className="blazeIt">
         <div className="blazeItText">
           <p>Earn $420.69 in Los Angeles every day</p>

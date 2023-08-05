@@ -1,8 +1,6 @@
-import React from 'react';
-import { Form, Button, Container, Col } from 'react-bootstrap';
+import { Form, Button, Container, Col, Alert } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { Form, Button, Col, Alert } from 'react-bootstrap';
 import { LOGIN_HOMEZ } from '../utils/mutations';
 import Auth from '../utils/auth';
 import HomezNavbar from '../components/Navbar';
