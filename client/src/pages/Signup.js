@@ -110,7 +110,7 @@ const SignupHomez = () => {
               </div>
             </Form.Group>
     
-          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password && userFormData.role)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
+          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
           </Form>
 
           </>

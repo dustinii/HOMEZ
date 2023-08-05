@@ -18,6 +18,14 @@ const HomezNavbar = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  // const navigate = useNavigate () 
+
+    // function handleClick(){
+    //   if(Auth.loggedIn === false){
+    //     setShowModal(true)
+    //   } else setShowModal(true)
+    // } 
+
 
   return (
     <>
@@ -29,7 +37,7 @@ const HomezNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-start">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/ride">
+            <Nav.Link as={Link} >
               Ride
             </Nav.Link>
             <Nav.Link as={Link} to="/drive">
