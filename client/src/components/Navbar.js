@@ -18,17 +18,9 @@ const HomezNavbar = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const navigate = useNavigate()
-
-  const handleClick = () => {
-    if(Auth.loggedIn === true){ 
-    navigate('/ride')
-  } else {
-    setShowModal(true)
-  }
-}
 
   return (
+    <>
     <Navbar className="navBar">
       <Container fluid={true} className="d-flex">
         <Navbar.Brand as={Link} to="/">
@@ -37,7 +29,7 @@ const HomezNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-start">
           <Nav className="mr-auto">
-            <Nav.Link onClick={handleClick} to="/ride">
+            <Nav.Link as={Link} to="/ride">
               Ride
             </Nav.Link>
             <Nav.Link as={Link} to="/drive">
@@ -55,10 +47,12 @@ const HomezNavbar = () => {
             </Nav.Link> */}
             {Auth.loggedIn() ? (
               <>
-                <Nav.Link onClick={Auth.logout}>logout</Nav.Link>  
+                <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>  
               </>
             ) : (
+              <>
               <Nav.Link onClick={() => setShowModal(true)}>Login/Sign up</Nav.Link>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>
@@ -105,6 +99,7 @@ const HomezNavbar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 };
 
