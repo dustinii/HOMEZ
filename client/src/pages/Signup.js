@@ -97,7 +97,7 @@ const SignupHomez = () => {
                   label='Rider'
                   name='role'
                   checked={driverChecked}
-                  onChange={handleDriver}
+                  onChange={() => setDriverChecked(false)}
                 />
 
                 <Form.Check
@@ -108,7 +108,7 @@ const SignupHomez = () => {
                   label='Driver'
                   name='role'
                   checked={driverChecked}
-                  onChange={handleDriver}
+                  onChange={() => setDriverChecked(true)}
                 />
               </div>
             </Form.Group>

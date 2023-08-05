@@ -23,14 +23,14 @@ const LoginHomez = () => {
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
-        setUserFormData({ ...userFormData, [name] : value})
+        setUserFormData({ ...userFormData, [name]: value })
     };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         const form = event.currentTarget;
-        if(form.checkValidity() === false) {
+        if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
@@ -41,7 +41,7 @@ const LoginHomez = () => {
             });
             console.log(data)
             Auth.login(data.login.token)
-        } catch(err) {
+        } catch (err) {
             console.log(error)
         }
 
@@ -51,7 +51,7 @@ const LoginHomez = () => {
         });
 
     };
- 
+
     return (
         <>
             <HomezNavbar />
@@ -66,26 +66,29 @@ const LoginHomez = () => {
                             <Form.Control.Feedback type="invalid">Username is required!</Form.Control.Feedback>
                         </Form.Group> */}
 
-                {/* <h2 className='loginSubTitle'>Login to your account</h2> */}
+                    {/* <h2 className='loginSubTitle'>Login to your account</h2> */}
 
-                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-                    <div className="loginForm">
-                        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Wrong login</Alert>
+                    <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                        <div className="loginForm">
+                            <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Wrong login</Alert>
 
-                    <Form.Group as={Col} controlId="formGroupEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter your email" name="email" onChange={handleInputChange} value={userFormData.email} required/>
-                        <Form.Control.Feedback type= "invalid">Incorrect email!</Form.Control.Feedback>
-                    </Form.Group>
+                            <Form.Group as={Col} controlId="formGroupEmail">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" placeholder="Enter your email" name="email" onChange={handleInputChange} value={userFormData.email} required />
+                                <Form.Control.Feedback type="invalid">Incorrect email!</Form.Control.Feedback>
+                            </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGroupPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter your password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
-                        <Form.Control.Feedback type= "invalid">Incorrect password!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Button disabled={!(userFormData.email && userFormData.password)} type="submit" className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
-                    </div>
-                </Form>
+                            <Form.Group as={Col} controlId="formGroupPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Enter your password" name="password" onChange={handleInputChange} value={userFormData.password} required />
+                                <Form.Control.Feedback type="invalid">Incorrect password!</Form.Control.Feedback>
+                            </Form.Group>
+
+                            <div className="d-flex justify-content-center" style={{ marginBottom: '50px' }}>
+                                <Button disabled={!(userFormData.email && userFormData.password)} type="submit" className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
+                            </div>
+                        </div>
+                    </Form>
                 </Col>
             </Container>
         </>
