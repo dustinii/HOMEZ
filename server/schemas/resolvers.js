@@ -8,10 +8,18 @@ const rides = [];
 
 const resolvers = {
   Query: {
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        return userData;
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     // this is for the user with a account type of "rider", logged in role is rider
     meAsRider: async (parent, args, context) => {
       if (context.user) {
-        const riderData = await User.findOne({ _id: context.user._id, role: "rider" }).select('-__v -password');
+        console.log(context.user)
+        const riderData = await User.findOne({ _id: context.user._id }).select('-__v -password');
         return riderData;
       }
       throw new AuthenticationError('You need to be logged in!');

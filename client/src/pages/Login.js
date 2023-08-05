@@ -1,8 +1,6 @@
-import React from 'react';
-import { Form, Button, Container, Col } from 'react-bootstrap';
+import { Form, Button, Container, Col, Alert } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { Form, Button, Col, Alert } from 'react-bootstrap';
 import { LOGIN_HOMEZ } from '../utils/mutations';
 import Auth from '../utils/auth';
 import HomezNavbar from '../components/Navbar';
@@ -51,6 +49,7 @@ const LoginHomez = () => {
             email: '',
             password: '',
         });
+
     };
  
     return (
@@ -60,22 +59,33 @@ const LoginHomez = () => {
             <Container className="d-flex justify-content-center">
                 <Col md={6}>
                     <h1 className='text-center' style={{ marginTop: '50px' }}>Welcome Back to HOMEZ</h1>
-                    <Form style={{ marginBottom: '50px' }}>
+                    {/* <Form >
                         <Form.Group controlId="formGroupUsername" style={{ marginBottom: '20px' }}>
                             <Form.Label>Username</Form.Label>
                             <Form.Control type="username" placeholder="Enter your username" required />
                             <Form.Control.Feedback type="invalid">Username is required!</Form.Control.Feedback>
-                        </Form.Group>
+                        </Form.Group> */}
 
-                        <Form.Group controlId="formGroupPassword" style={{ marginBottom: '20px' }}>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Enter your password" required />
-                            <Form.Control.Feedback type="invalid">Password is required!</Form.Control.Feedback>
-                        </Form.Group>
-                        <div className="d-flex justify-content-center" style={{ marginBottom: '50px' }}>
-                            <Button type="submit" className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
-                        </div>
-                    </Form>
+                {/* <h2 className='loginSubTitle'>Login to your account</h2> */}
+
+                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                    <div className="loginForm">
+                        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Wrong login</Alert>
+
+                    <Form.Group as={Col} controlId="formGroupEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Enter your email" name="email" onChange={handleInputChange} value={userFormData.email} required/>
+                        <Form.Control.Feedback type= "invalid">Incorrect email!</Form.Control.Feedback>
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGroupPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Enter your password" name="password" onChange={handleInputChange} value={userFormData.password} required/>
+                        <Form.Control.Feedback type= "invalid">Incorrect password!</Form.Control.Feedback>
+                    </Form.Group>
+                    <Button disabled={!(userFormData.email && userFormData.password)} type="submit" className="LoginBtn" variant="outline-success">Welcome Back Homez!</Button>
+                    </div>
+                </Form>
                 </Col>
             </Container>
         </>
