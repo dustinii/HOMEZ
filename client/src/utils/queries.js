@@ -2,14 +2,23 @@ import { gql } from '@apollo/client';
 
 export const GET_RIDER = gql`
   {
-    meAsRider {
+  meAsRider {
+    _id
+    email
+    
+    role
+    username
+    rides {
       _id
-      username
-      email
-      
-      
+      destination
+      homezTeamId
+      origin
+      price
+      riderID
+      timeForDeparture
     }
   }
+}
 `;
 
 export const GET_HOMEZ = gql`
@@ -23,3 +32,23 @@ export const GET_HOMEZ = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+  {
+    user {
+      _id
+      email
+      rides {
+        _id
+        destination
+        homezTeamId
+        origin
+        price
+        riderID
+        timeForDeparture
+      }
+      role
+      username
+    }
+  }
+  `;

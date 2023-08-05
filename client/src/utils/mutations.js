@@ -96,3 +96,25 @@ export const COMPLETE_RIDE = gql`
     }
   }
 `;
+export const ADD_USER = gql`
+mutation addUser($username: String!, $email: String!, $password: String!, $role: String!) {
+  addUser(username: $username, email: $email, password: $password, role: $role) {
+    token
+    user {
+      _id
+      email
+      rides {
+        _id
+        destination
+        homezTeamId
+        origin
+        price
+        riderID
+        timeForDeparture
+      }
+      role
+      username
+    }
+  }
+}
+`;

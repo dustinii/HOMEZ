@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { Button, Form, Col, Alert, Container } from 'react-bootstrap';
-import { ADD_HOMEZ } from '../utils/mutations';
+import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
 import HomezNavbar from '../components/Navbar';
 
 const SignupHomez = () => {
 
-  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: '', role: '', }))
+  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: '' }))
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [addUser, { error }] = useMutation(ADD_HOMEZ);
+  const [addUser, { error }] = useMutation(ADD_USER);
+  const [ driverChecked, setDriverChecked ] = useState(false);
+  // const { riderChecked, setRiderChecked } = useState(false);
 
   useEffect(() => {
     if (error) {
@@ -19,6 +21,9 @@ const SignupHomez = () => {
       setShowAlert(false)
     }
   }, [error]);
+  const handleDriver = () => {
+    setDriverChecked(true);
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,7 +32,7 @@ const SignupHomez = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -36,7 +41,7 @@ const SignupHomez = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...userFormData },
+        variables: { ...userFormData, role: driverChecked ? 'homezuser' : 'rider' },
       });
       console.log(data)
       Auth.login(data.addUser.token)
@@ -48,7 +53,6 @@ const SignupHomez = () => {
       username: '',
       email: '',
       password: '',
-      role: '',
     });
   };
 
@@ -79,10 +83,31 @@ const SignupHomez = () => {
               <Form.Control.Feedback type="invalid">password is required!</Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="formGridRole" style={{ marginBottom: '20px' }}>
-              <Form.Label>choose a role</Form.Label>
-              <Form.Control type="text" placeholder="Enter a role" name="role" onChange={handleInputChange} value={userFormData.role} required />
-              <Form.Control.Feedback type="invalid">role is required!</Form.Control.Feedback>
+            <Form.Group style={{ marginBottom: '20px' }}>
+              <Form.Label>Are you a rider or a driver?</Form.Label>
+              <div className="mb-3 d-flex justify-content-center align-items-center">
+                <Form.Check
+                  className="mx-2"
+                  inline
+                  type='radio'
+                  id='rider'
+                  label='Rider'
+                  name='role'
+                  checked={driverChecked}
+                  onChange={() => setDriverChecked(false)}
+                />
+
+                <Form.Check
+                  className="mx-2"
+                  inline
+                  type='radio'
+                  id='driver'
+                  label='Driver'
+                  name='role'
+                  checked={driverChecked}
+                  onChange={() => setDriverChecked(true)}
+                />
+              </div>
             </Form.Group>
     
           <Button disabled={!(userFormData.username && userFormData.email && userFormData.password && userFormData.role)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>

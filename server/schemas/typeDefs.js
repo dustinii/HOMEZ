@@ -45,6 +45,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    user: User
     # query where user role = rider
     meAsRider: User
     # query where user role = homie

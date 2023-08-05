@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomezNavbar from "../components/Navbar";
+// import HomezNavbar from "../components/Navbar";
 import laSkyline from "../images/laSkyline.jpg";
 import behindWheel from "../images/behindWheel.jpg";
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -8,7 +8,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 function Home() {
   return (
     <div>
-      <HomezNavbar />
+      {/* <HomezNavbar /> */}
       <div className="imageOverlay">
   <img className="laSkyline" src={laSkyline} alt="Los Angeles Skyline" />
   <Container fluid className="overlayContainer text-center">
