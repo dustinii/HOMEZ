@@ -29,10 +29,10 @@ Make sure that Express.js and Node.js are installed, then run the command "npm r
 Either run the program through the command line or access the deployed program at (URL HERE).
 
 ## [TECHNOLOGIES USED](#techused)
-* Mongoose DB
-* Express.js
-* React
-* Node.js
+* ![Mongoose DB](/client/src/images/free-mongodb-5-1175140.png)
+* ![Express.js](/client/src/images/expressjs.png)
+* ![React](/client/src/images/logo+react+react+js+icon-1320184811840217251.png)
+* ![Node.js](/client/src/images/nodejs.png)
 
 ## [LICENSE](#license)
  ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
