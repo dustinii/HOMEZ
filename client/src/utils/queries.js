@@ -65,6 +65,3 @@ export const GET_RIDERS_RIDES = gql`
   }
 `;
 
-export const GET_UNCLAIMED_DRIVES = gql`
-
-`
