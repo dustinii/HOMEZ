@@ -65,6 +65,11 @@ const resolvers = {
       }
       throw new AuthenticationError("you must be logged in");
     },
+    unclaimedRides: async(parent, args, context) => {
+      if (context.user) {
+        
+      }
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
