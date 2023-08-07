@@ -9,7 +9,7 @@ import {
   Modal,
   Tab,
 } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import SignupHomez from "../pages/Signup";
 import LoginHomez from "../pages/Login"
@@ -17,14 +17,6 @@ import LoginHomez from "../pages/Login"
 const HomezNavbar = () => {
 
   const [showModal, setShowModal] = useState(false);
-
-  // const navigate = useNavigate () 
-
-    // function handleClick(){
-    //   if(Auth.loggedIn === false){
-    //     setShowModal(true)
-    //   } else setShowModal(true)
-    // } 
 
 
   return (
@@ -37,7 +29,7 @@ const HomezNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-start">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} >
+            <Nav.Link as={Link} to="/ride" >
               Ride
             </Nav.Link>
             <Nav.Link as={Link} to="/drive">
@@ -59,7 +51,7 @@ const HomezNavbar = () => {
               </>
             ) : (
               <>
-              <Nav.Link onClick={() => setShowModal(true)}>Login/Sign up</Nav.Link>
+              <Nav.Link className="loginsign" onClick={() => setShowModal(true)}>Login/Sign up</Nav.Link>
               </>
             )}
           </Nav>
@@ -95,14 +87,6 @@ const HomezNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-          {/* <Modal>
-            <Button as={Link} eventKey='login'to="/login" className="navBtn" variant="outline-success">
-              Login
-            </Button>
-            <Button as={Link} eventKey='signup' to="/signup" className="navBtn" variant="outline-success">
-              Sign up
-            </Button>
-            </Modal> */}
           </Form>
         </Navbar.Collapse>
       </Container>
