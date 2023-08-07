@@ -10,7 +10,7 @@ export default function Rider ({rider}) {
           <h1 className='text-center' style={{ marginTop: '50px' }}>Have a Seat,</h1>
           <h1 className='text-center' style={{ marginBottom: '50px' }}>HOMEZ Will Take the Wheel</h1>
           <div>
-            <MapForm  />
+            <MapForm  rider={rider}/>
           </div>
         </Col>
       </Container>

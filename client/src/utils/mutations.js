@@ -132,3 +132,15 @@ mutation login($email: String!, $password: String!) {
   }
 }
 `;
+
+export const POST_NEW_RIDE = gql`
+mutation postRide($riderID: ID, $price: Int, $destination: String!, $origin: String!, $timeForDeparture: String!) {
+  postRide(riderID: $riderID, price: $price, destination: $destination, origin: $origin, timeForDeparture: $timeForDeparture) {
+    _id
+    destination
+    origin
+    riderID
+    timeForDeparture
+  }
+}
+`

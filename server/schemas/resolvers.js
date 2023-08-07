@@ -77,12 +77,12 @@ const resolvers = {
     postRide: async (parent, args, context) => {
       if (context.user) {
         // Use Day.js to format the timeForDeparture field
-        const formattedTimeForDeparture = dayjs.unix(args.timeForDeparture).format('YYYY-MM-DD HH:mm:ss');
+        // const formattedTimeForDeparture = dayjs.unix(args.timeForDeparture).format('YYYY-MM-DD HH:mm:ss');
         // Create the ride with the formatted timeForDeparture
         const newRide = await Ride.create({
           ...args,
           riderID: context.user._id,
-          timeForDeparture: formattedTimeForDeparture, // Use the formatted timeForDeparture
+          // timeForDeparture: formattedTimeForDeparture, // Use the formatted timeForDeparture
         });
         return newRide;
       }

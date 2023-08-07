@@ -15,10 +15,10 @@ const typeDefs = gql`
     _id: ID
     origin: String!
     destination: String!
-    timeForDeparture: Int!
-    price: Int!
+    timeForDeparture: String!
+    price: Int
     homezTeamId: ID
-    riderID: ID!
+    riderID: ID
   }
 
   type Homez {
@@ -32,10 +32,10 @@ const typeDefs = gql`
 
   input InputRide {
     rideId: String
-    price: Int!
+    price: Int
       destination: String!
       origin: String!
-      timeForDeparture: Int!
+      timeForDeparture: String!
   }
 
 
@@ -65,12 +65,12 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!, role: String!): Auth
     createTeam(homie_usrnme_1: String!, homie_usrnme_2: String!): Homez
     postRide(
-      riderId: ID!
+      riderID: ID
       homezTeamId: ID
-      price: Int!
+      price: Int
       destination: String!
       origin: String!
-      timeForDeparture: Int!
+      timeForDeparture: String!
     ): Ride
     completeRide(HomezId: ID, RideId:ID): Ride
   }
