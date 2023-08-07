@@ -28,6 +28,7 @@
 
 .navBtn {
     margin-right: 5px;
+    display: inline-block;
 }
 
 .aboutContainer {
@@ -261,3 +262,43 @@ label {
   margin-bottom: 50px;
   font-weight: bolder;
 }
+
+.needARide {
+  position: absolute;
+  bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-left: 20px;
+}
+
+.haveAccount {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cardLink {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+  .SignupBtn{
+    margin-top: 33px;
+  }
+
+  .LoginBtn{
+    margin-top: 33px;
+
+  }
+
+  .center{
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .logBtn{
+    width: 500px;
+    margin: 0 auto;
+  }
