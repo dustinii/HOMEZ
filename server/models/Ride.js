@@ -1,10 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const rideSchema = new Schema({
-  rideId: {
-    type: String,
-    required: true,
-  },
+
   
   origin: {
     type: String,
@@ -23,7 +20,7 @@ const rideSchema = new Schema({
   },
   homezTeamId: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Homez',
   },       
   riderID: {
     type: Schema.Types.ObjectId,

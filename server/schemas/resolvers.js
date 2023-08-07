@@ -81,21 +81,28 @@ const resolvers = {
         // Create the ride with the formatted timeForDeparture
         const newRide = await Ride.create({
           ...args,
-          riderId: context.user._id,
+          riderID: context.user._id,
           timeForDeparture: formattedTimeForDeparture, // Use the formatted timeForDeparture
         });
         return newRide;
       }
     },
 
-    completeRide:  async (parent, { newRide }, context) => {
+    completeRide:  async (parent, { HomezId, RideId }, context) => {
       if (context.user) {
-        const updatedHomez = await User.findByIdAndUpdate(
-          { _id: context.user._id, role:"homezuser" },
-          { $push: { completeRides: newRide }},
+        const updatedRide = await Ride.findByIdAndUpdate(
+          { _id: RideId },
+          { $set: { homezTeamId: HomezId }},
           { new: true }
         );
-        return updatedHomez;
+const updatedHomez = await Homez.findByIdAndUpdate(
+  {_id: HomezId},
+{ $push: {completeRides: RideId}},
+{new: true}
+
+)
+
+        return updatedRide;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
