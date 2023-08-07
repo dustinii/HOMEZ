@@ -1,24 +1,24 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_RIDER = gql`
   {
-  meAsRider {
-    _id
-    email
-    
-    role
-    username
-    rides {
+    meAsRider {
       _id
-      destination
-      homezTeamId
-      origin
-      price
-      riderID
-      timeForDeparture
+      email
+
+      role
+      username
+      rides {
+        _id
+        destination
+        homezTeamId
+        origin
+        price
+        riderID
+        timeForDeparture
+      }
     }
   }
-}
 `;
 
 export const GET_HOMEZ = gql`
@@ -27,8 +27,6 @@ export const GET_HOMEZ = gql`
       _id
       username
       email
-      
-      
     }
   }
 `;
@@ -51,4 +49,22 @@ export const GET_USER = gql`
       username
     }
   }
-  `;
+`;
+
+export const GET_RIDERS_RIDES = gql`
+  query riderRides {
+    riderRides {
+      _id
+      destination
+      origin
+      riderID
+      homezTeamId
+      price
+      timeForDeparture
+    }
+  }
+`;
+
+export const GET_UNCLAIMED_DRIVES = gql`
+
+`

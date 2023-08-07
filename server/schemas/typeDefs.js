@@ -57,6 +57,7 @@ const typeDefs = gql`
     # query all rides
     rides: [Ride]
     allusers: [User]
+    riderRides: [Ride]
 
   }
 

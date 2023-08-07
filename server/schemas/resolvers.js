@@ -43,12 +43,20 @@ const resolvers = {
       return homezTeam
     },
     // return all rides
-    rides: () => {
+    rides: async () => {
       return Ride.find({})
     },
     allusers: async (_, args, context) => {
       console.log("all users")
       return await User.find({})
+    },
+    riderRides: async (parent, args, context) => {
+      if (context.user) {
+        console.log(context.user._id);
+        const rides = await Ride.find({riderID: context.user._id})
+        return rides
+      }
+      throw new AuthenticationError("you must be logged in")
     }
   },
   Mutation: {
