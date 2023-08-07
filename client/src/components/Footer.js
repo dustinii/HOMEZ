@@ -20,6 +20,10 @@ function Footer() {
                         <Link to="/privacy-policy" className="text-white">Privacy Policy</Link><br />
                         <Link to="/terms-of-service" className="text-white">Terms of Service</Link>
                     </Col>
+                    <Col>
+                        <h5>Support Us</h5>
+                        <Link to="/donate" className="text-white">Donate</Link>
+                    </Col>
                 </Row>
                 <Row className="border-top pt-3">
                     <Col>
