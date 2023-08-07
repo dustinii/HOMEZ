@@ -1,127 +1,139 @@
-.navBar {
-    overflow: hidden;
-    background-color: #1a1a1a;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+html,
+body,
+#root {
+height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+.navBar {
+  height: 80px;
+  background-color: #1a1a1a;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+
 .navBar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navBar a:hover {
-    background-color: #111;
-    color: #4CAF50;
-    border-radius: 10px;
+  background-color: #111;
+  color: #4CAF50;
+  border-radius: 10px;
 }
 
 .navBar a.active {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4CAF50;
+  color: white;
 }
 
 .navBtn {
-    margin-right: 5px;
-    display: inline-block;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 .aboutContainer {
-    position: relative;
-    width: 100%;
-    height: auto;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .aboutImg {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .aboutTitle {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    text-align: center;
-    font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+  font-weight: bold;
 }
 
 
 .aboutText {
-    text-align: center;
-    font-size: 20px;
-    margin: 50px;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #1a1a1a;
-    color: white;
+  text-align: center;
+  font-size: 20px;
+  margin: 50px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: white;
 }
 
 label {
-    display: block;
-    text-align: center;
-  }
+  display: block;
+  text-align: center;
+}
 
 .mapForm {
-    text-align: center;
-  }
+  text-align: center;
+}
 
- .bookHomez {
-    text-align: center;
-    color: #4CAF50;
-    background-color: white;
-    border: solid #4CAF50;
-    border-radius: 5px;
- } 
+.bookHomez {
+  text-align: center;
+  color: #4CAF50;
+  background-color: white;
+  border: solid #4CAF50;
+  border-radius: 5px;
+}
 
- .getStarted {
-    text-align: center;
-    color: #4CAF50;
-    background-color: white;
-    border: solid #4CAF50;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    font-size: 20px;
- }
+.getStarted {
+  text-align: center;
+  color: #4CAF50;
+  background-color: white;
+  border: solid #4CAF50;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
 
-    .bookHomez:hover {
-        background-color: #4CAF50;
-        color: white;
-    }
+.bookHomez:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 
-    .getStarted:hover {
-        background-color: #4CAF50;
-        color: white;
-    }
+.getStarted:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 
 .loginTitle {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.footer {
-    /* position: static; */
-    /* left: 0; */
-    padding-bottom: 5px;
-    /* bottom: 0; */
-    width: 100%;
-    background-color: #1a1a1a;
-    color: white;
-    text-align: center;
+footer {
+ margin-top: auto;
+  padding-bottom: 5px;
+
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
 }
 
-.footer p {
-    padding-top: 10px;
+footer p {
+  padding-top: 10px;
 }
 
 .behindWheel {
@@ -130,113 +142,114 @@ label {
 
 .rideParagraph {
   color: #1a1a1a;
-  padding: 20px;  
+  padding: 20px;
   border-radius: 10px;
-  width: 60%; 
-  background: rgba(255,255,255,0.7);
+  width: 60%;
+  background: rgba(255, 255, 255, 0.7);
   font-weight: bold;
-  position: absolute; 
+  position: absolute;
   bottom: 10%;
   right: 10%;
-  overflow: auto; 
+  overflow: auto;
   text-align: center;
 }
 
 .imageTextContainer {
   position: relative;
-  height: auto; 
+  height: auto;
 }
 
-  
-  .developerGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    margin: 20px;
-  }
-  
-  .developer {
-    padding: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-  }
-  
-  
-  .developerImg {
-    width: 100%;
-    height: auto;
-  }
 
-  .developerTitle {
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 10px;
-    opacity: 0.8;
+.developerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 20px;
 }
 
-  
-  .developer h2 {
-    margin: 10px 0;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .developer p {
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  .devIntro {
-    background-color: #f5f5f5;
-    padding: 20px;
-    margin: 20px 100px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    text-align: center;
-    width: auto;
-    border: 1px solid #000;
-    border-radius: 10px;
-  }
-  
-  .devIntro p {
-    margin: 0;
-  }
-  
-  .blazeIt {
-    background-color: black;
-    padding: 20px;
-  }
-
-  .blazeItText {
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: white;
-    height: 50%;
-    width: 25%;
-    font-size: 30px;
-    text-align: left;
-    color: #1a1a1a;
-    font-weight: bold;
-    margin-left: 22px;
-  }
-
-  .blazeItText p {
-    margin: 10px;
-  }
-
-  .drive-sections {
-    display: flex;
-    justify-content: space-between;
+.developer {
+  padding: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-.current-drives, .past-drives {
-    flex-basis: 45%;
-    padding: 20px;
-    box-sizing: border-box;
+
+.developerImg {
+  width: 100%;
+  height: auto;
+}
+
+.developerTitle {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+
+.developer h2 {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.developer p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.devIntro {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin: 20px 100px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.devIntro p {
+  margin: 0;
+}
+
+.blazeIt {
+  background-color: black;
+  padding: 20px;
+}
+
+.blazeItText {
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: white;
+  height: 50%;
+  width: 25%;
+  font-size: 30px;
+  text-align: left;
+  color: #1a1a1a;
+  font-weight: bold;
+  margin-left: 22px;
+}
+
+.blazeItText p {
+  margin: 10px;
+}
+
+.drive-sections {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-drives,
+.past-drives {
+  flex-basis: 45%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .imageOverlay {
@@ -284,21 +297,21 @@ label {
 }
 
 
-  .SignupBtn{
-    margin-top: 33px;
-  }
+.SignupBtn {
+  margin-top: 33px;
+}
 
-  .LoginBtn{
-    margin-top: 33px;
+.LoginBtn {
+  margin-top: 33px;
 
-  }
+}
 
-  .center{
-    width: 960px;
-    margin: 0 auto;
-  }
+.center {
+  width: 960px;
+  margin: 0 auto;
+}
 
-  .logBtn{
-    width: 500px;
-    margin: 0 auto;
-  }
+.logBtn {
+  width: 500px;
+  margin: 0 auto;
+}
