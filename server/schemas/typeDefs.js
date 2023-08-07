@@ -71,7 +71,7 @@ const typeDefs = gql`
       origin: String!
       timeForDeparture: Int!
     ): Ride
-    completeRide(newRide: InputRide!): User
+    completeRide(HomezId: ID, RideId:ID): Ride
   }
   type Subscription {
     ride: Ride

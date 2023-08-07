@@ -21,9 +21,9 @@ const userSchema = new Schema(
       type: String,
       enum: ['rider', 'homezuser']
     },
-    completeRides: [{type: Schema.Types.ObjectId, ref: 'Ride'}],
+    
 
-    rides: [{ type: Schema.Types.ObjectId, ref: 'Ride' }]
+   
   },
   // set this to use virtual below
   {
@@ -48,9 +48,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('rideCount').get(function () {
-  return this.completeRides.length;
-});
+
 
 const User = model('User', userSchema);
 

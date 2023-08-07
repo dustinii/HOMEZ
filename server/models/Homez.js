@@ -16,13 +16,13 @@ const homezSchema = new Schema(
 
     },
 
-    rides: [
+    completeRides: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Ride',
       },
     ],
-   
+    
   },
   {
     toJSON: {
