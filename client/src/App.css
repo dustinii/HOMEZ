@@ -139,6 +139,7 @@ label {
   bottom: 10%;
   right: 10%;
   overflow: auto; 
+  text-align: center;
 }
 
 .imageTextContainer {
@@ -175,16 +176,19 @@ label {
     font-weight: bold;
     background-color: white;
     border-radius: 10px;
+    opacity: 0.8;
 }
 
   
   .developer h2 {
     margin: 10px 0;
     font-size: 20px;
+    text-align: center;
   }
   
   .developer p {
     font-size: 16px;
+    text-align: center;
   }
   
   .devIntro {
