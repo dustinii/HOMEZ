@@ -67,8 +67,10 @@ const resolvers = {
     },
     unclaimedRides: async(parent, args, context) => {
       if (context.user) {
-        
+        const availableRides = await Ride.find({homezTeamId: null})
+        return availableRides;
       }
+      throw new AuthenticationError("must be logged in to see unclaimed rides. ")
     }
   },
   Mutation: {

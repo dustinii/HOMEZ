@@ -65,3 +65,16 @@ export const GET_RIDERS_RIDES = gql`
   }
 `;
 
+export const GET_UNCLAIMED_RIDES = gql`
+ {
+  unclaimedRides {
+    _id
+    destination
+    homezTeamId
+    origin
+    price
+    riderID
+    timeForDeparture
+  }
+}
+`
