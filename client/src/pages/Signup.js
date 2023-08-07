@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { Button, Form, Col, Alert, Container } from 'react-bootstrap';
-import { ADD_HOMEZ } from '../utils/mutations';
+import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
 import HomezNavbar from '../components/Navbar';
 
 const SignupHomez = () => {
 
-  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: '', role: '' }))
+  const [userFormData, setUserFormData] = useState(({ username: '', email: '', password: '' }))
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [addHomezUser, { error }] = useMutation(ADD_HOMEZ);
+  const [addUser, { error }] = useMutation(ADD_USER);
+  const [ driverChecked, setDriverChecked ] = useState(false);
+  // const { riderChecked, setRiderChecked } = useState(false);
 
   useEffect(() => {
     if (error) {
@@ -19,6 +21,9 @@ const SignupHomez = () => {
       setShowAlert(false)
     }
   }, [error]);
+  const handleDriver = () => {
+    setDriverChecked(true);
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,7 +32,7 @@ const SignupHomez = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -35,11 +40,11 @@ const SignupHomez = () => {
     }
 
     try {
-      const { data } = await addHomezUser({
-        variables: { ...userFormData },
+      const { data } = await addUser({
+        variables: { ...userFormData, role: driverChecked ? 'homezuser' : 'rider' },
       });
       console.log(data)
-      Auth.login(data.addHomezUser.token)
+      Auth.login(data.addUser.token)
     } catch (err) {
       console.log(error)
     }
@@ -48,7 +53,6 @@ const SignupHomez = () => {
       username: '',
       email: '',
       password: '',
-      role: '',
     });
   };
 
@@ -66,6 +70,7 @@ const SignupHomez = () => {
             <Form.Group controlId="formGridFirstName" style={{ marginBottom: '20px' }}>
               <Form.Label>username</Form.Label>
               <Form.Control type="text" placeholder="Enter first name" name="username" onChange={handleInputChange} value={userFormData.username} required />
+
               <Form.Control.Feedback type="invalid">username is required!</Form.Control.Feedback>
             </Form.Group>
 
@@ -91,8 +96,9 @@ const SignupHomez = () => {
                   id='rider'
                   label='Rider'
                   name='role'
-                  value='Rider'
-                  onChange={handleInputChange}
+                  value={driverChecked}
+                  // checked={driverChecked}
+                  onChange={() => setDriverChecked(false)}
                 />
 
                 <Form.Check
@@ -102,8 +108,9 @@ const SignupHomez = () => {
                   id='driver'
                   label='Driver'
                   name='role'
-                  value='Driver'
-                  onChange={handleInputChange}
+                  value={driverChecked}
+                  // checked={driverChecked}
+                  onChange={handleDriver}
                 />
               </div>
             </Form.Group>

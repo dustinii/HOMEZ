@@ -1,13 +1,10 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-
-
+const { Schema, model, Types } = require('mongoose');
+const bcrypt = require('bcrypt')
 
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      
       unique: true,
     },
     email: {
@@ -20,10 +17,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-   role: {
-    type: String,
-    enum: ['rider', 'homezuser']
-   }
+    role: {
+      type: String,
+      enum: ['rider', 'homezuser']
+    },
+    
+
    
   },
   // set this to use virtual below

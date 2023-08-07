@@ -1,0 +1,27 @@
+[
+  {
+    "origin": "New York",
+    "destination": "Los Angeles",
+    "timeForDeparture": 1662067200,  
+    "price": 100,
+    "homezTeamId": "user_id_1",      
+    "riderID": "user_id_2"          
+  },  
+  {
+    "origin": "San Francisco",
+    "destination": "Seattle",
+    "timeForDeparture": 1663000800,  
+    "price": 75,
+    "homezTeamId": "user_id_3",      
+    "riderID": "user_id_4"          
+  },
+  {
+    "origin": "Chicago",
+    "destination": "Houston",
+    "timeForDeparture": 1664392800,  
+    "price": 120,
+    "homezTeamId": "user_id_5",      
+    "riderID": "user_id_6"          
+  },
+  
+]
