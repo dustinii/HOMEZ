@@ -57,7 +57,7 @@ const SignupHomez = () => {
       <HomezNavbar />
       <Container className="d-flex justify-content-center">
         <Col md={6}>
-          <h1 className='text-center' style={{ marginTop: '50px' }}>Register with HOMEZ:</h1>
+          <h1 className='text-center' style={{ marginTop: '50px' }}>Register with HOMEZ</h1>
           <h3 className='text-center'>For Worry-Free Nights Out</h3>
 
           <Form noValidate validated={validated} onSubmit={handleFormSubmit} style={{ marginBottom: '50px' }}>

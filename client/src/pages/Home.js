@@ -3,38 +3,36 @@ import { Link } from "react-router-dom";
 import HomezNavbar from "../components/Navbar";
 import laSkyline from "../images/laSkyline.jpg";
 import behindWheel from "../images/behindWheel.jpg";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 function Home() {
   return (
     <div>
       <HomezNavbar />
-      <div className="imageOverlay">
-  <img className="laSkyline" src={laSkyline} alt="Los Angeles Skyline" />
-  <Container fluid className="overlayContainer text-center">
+      <div style={{ position: "relative" }}>
+  <img className="laSkyline" src={laSkyline} alt="Los Angeles Skyline" style={{ width: "100%" }}/>
+  <Container fluid className="text-center" style={{ position: "absolute", top: "0", width: "100%", zIndex: 1 }}>
     <Row>
       <Col>
-        <h1 className="homeTitle">
-          Welcome to HOMEZ: Responsible Ride-Sharing
-        </h1>
+        <h1 className="homeTitle" style={{ color: "white", textAlign: "center", fontSize: "40px", marginTop: "50px", marginBottom: "50px", fontWeight: "bolder" }}>Welcome to HOMEZ: Responsible Ride-Sharing</h1>
       </Col>
     </Row>
   </Container>
+  <Card style={{ position: "absolute", bottom: "20px", left: "20px", zIndex: 2, backgroundColor: "rgba(255, 255, 255, 0.8)" }}>
+    <Card.Body>
+      <Link to="/ride" className="text-dark" style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold' }}>
+        <Card.Text>Need a ride? Sign up as a passenger</Card.Text>
+      </Link>
+    </Card.Body>
+  </Card>
+  <Card style={{ position: "absolute", bottom: "20px", right: "20px", zIndex: 2, backgroundColor: "rgba(255, 255, 255, 0.8)" }}>
+    <Card.Body>
+      <Link to="/login" className="text-dark" style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold' }}>
+        <Card.Text>Already have an account? Sign in</Card.Text>
+      </Link>
+    </Card.Body>
+  </Card>
 </div>
-<Card className="needARide">
-  <Card.Body>
-    <Link to="/ride" className="text-dark cardLink">
-      <Card.Text>Need a ride? Sign up as a passenger</Card.Text>
-    </Link>
-  </Card.Body>
-</Card>
-<Card className="haveAccount">
-  <Card.Body>
-    <Link to="/login" className="text-dark cardLink">
-      <Card.Text>Already have an account? Sign in</Card.Text>
-    </Link>
-  </Card.Body>
-</Card>
 
 
       <section className="blazeIt">
@@ -52,12 +50,12 @@ function Home() {
           car? Don't worry, we've got you covered. At HOMEZ, we understand that
           a great night out sometimes means you're not in the best condition to
           drive home. That's why we're here. With our easy to navigate website,
-          you can book a ride with your HOMEZ. We'll send two drivers - one to
-          drive you home in your own car, and another to pick up your driver. No
-          more stressing about leaving your car overnight or bothering friends
-          for a ride back to it the next day. With HOMEZ, you can enjoy your
-          night to the fullest and still make it home safe and sound. We've got
-          your back - and your car's too.
+          you can book a ride with your HOMEZ. We'll send two drivers - one to drive you
+          home in your own car, and another to pick up your driver. No more
+          stressing about leaving your car overnight or bothering friends for a
+          ride back to it the next day. With HOMEZ, you can enjoy your night to
+          the fullest and still make it home safe and sound. We've got your back
+          - and your car's too.
         </p>
       </div>
     </div>
