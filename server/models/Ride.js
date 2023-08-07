@@ -8,11 +8,11 @@ const rideSchema = new Schema({
     required: true,
   },
   destination: {
-    type: Number,
+    type: String,
     required: true,
   },
   timeForDeparture: {
-    type: Number,
+    type: String,
     required: true,
   },
   price: {
