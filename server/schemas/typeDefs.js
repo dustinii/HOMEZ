@@ -58,6 +58,7 @@ const typeDefs = gql`
     rides: [Ride]
     allusers: [User]
     riderRides: [Ride]
+    unclaimedRides: [Ride]
 
   }
 

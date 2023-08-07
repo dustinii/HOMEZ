@@ -1,7 +1,7 @@
-const { signToken } = require('../utils/auth');
+const { signToken } = require("../utils/auth");
 // going to need this for the login and signup mutations.
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Ride, Homez } = require('../models');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Ride, Homez } = require("../models");
 // const dayjs = require('dayjs');
 
 const rides = [];
@@ -10,54 +10,61 @@ const resolvers = {
   Query: {
     user: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        const userData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
         return userData;
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
     // this is for the user with a account type of "rider", logged in role is rider
     meAsRider: async (parent, args, context) => {
       if (context.user) {
-        console.log(context.user)
-        const riderData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        console.log(context.user);
+        const riderData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
         return riderData;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     // this is for the user who is is logged in as a driver - role enum is homieuser
     meAsHomez: async (parent, args, context) => {
       if (context) {
-        const homezData = await User.findOne({ _id: context.user._id, role: "homezuser" }).select('-__v -password');
+        const homezData = await User.findOne({
+          _id: context.user._id,
+          role: "homezuser",
+        }).select("-__v -password");
         return homezData;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     // find a single driver
     findSingleHomie: async (_, args, context) => {
-      const homie = await User.findOne({ username: args.username })
+      const homie = await User.findOne({ username: args.username });
       return homie;
     },
     // find a driving team
     homezTeam: async (_, args, context) => {
-      const homezTeam = await Homez.findOne({ _id: args._id })
-      return homezTeam
+      const homezTeam = await Homez.findOne({ _id: args._id });
+      return homezTeam;
     },
     // return all rides
     rides: async () => {
-      return Ride.find({})
+      return Ride.find({});
     },
     allusers: async (_, args, context) => {
-      console.log("all users")
-      return await User.find({})
+      console.log("all users");
+      return await User.find({});
     },
     riderRides: async (parent, args, context) => {
       if (context.user) {
         console.log(context.user._id);
-        const rides = await Ride.find({riderID: context.user._id})
-        return rides
+        const rides = await Ride.find({ riderID: context.user._id });
+        return rides;
       }
-      throw new AuthenticationError("you must be logged in")
-    }
+      throw new AuthenticationError("you must be logged in");
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -66,18 +73,18 @@ const resolvers = {
       return { token, rider };
     },
     createTeam: async (parent, args) => {
-      const team = Homez.create(args)
+      const team = Homez.create(args);
       return team;
     },
     // login rider
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError('No user found');
+        throw new AuthenticationError("No user found");
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
       const token = signToken(user);
       return { token, user };
@@ -96,33 +103,23 @@ const resolvers = {
       }
     },
 
-    completeRide:  async (parent, { HomezId, RideId }, context) => {
+    completeRide: async (parent, { HomezId, RideId }, context) => {
       if (context.user) {
         const updatedRide = await Ride.findByIdAndUpdate(
           { _id: RideId },
-          { $set: { homezTeamId: HomezId }},
+          { $set: { homezTeamId: HomezId } },
           { new: true }
         );
-const updatedHomez = await Homez.findByIdAndUpdate(
-  {_id: HomezId},
-{ $push: {completeRides: RideId}},
-{new: true}
-
-)
+        const updatedHomez = await Homez.findByIdAndUpdate(
+          { _id: HomezId },
+          { $push: { completeRides: RideId } },
+          { new: true }
+        );
 
         return updatedRide;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
-  }
+  },
 };
 module.exports = resolvers;
-
-
-
-
-
-
-
-
-
