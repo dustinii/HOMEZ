@@ -56,13 +56,10 @@ const SignupHomez = () => {
     });
   };
 
-  return (
-    <>
-      <HomezNavbar />
-      <Container className="d-flex justify-content-center">
-        <Col md={6}>
-          <h1 className='text-center' style={{ marginTop: '50px' }}>Register with HOMEZ:</h1>
-          <h3 className='text-center'>For Worry-Free Nights Out</h3>
+    return (
+      
+      <>
+          <h1 className='signupTitle'>Register with HOMEZ: For Worry-Free Nights Out</h1>
 
           <Form noValidate validated={validated} onSubmit={handleFormSubmit} style={{ marginBottom: '50px' }}>
             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>Something went wrong with your signup</Alert>
@@ -112,15 +109,14 @@ const SignupHomez = () => {
                 />
               </div>
             </Form.Group>
-
-            <div className="d-flex justify-content-center" style={{ marginBottom: '50px' }}>
-              <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
-            </div>
+    
+          <Button disabled={!(userFormData.username && userFormData.email && userFormData.password)} type='submit' className="SignupBtn" variant="outline-success">Submit Homez!</Button>
           </Form>
-        </Col>
-      </Container>
-    </>
-  );
-}
+
+          </>
+        
+        
+      );
+} 
 
 export default SignupHomez;

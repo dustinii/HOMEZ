@@ -28,6 +28,7 @@
 
 .navBtn {
     margin-right: 5px;
+    display: inline-block;
 }
 
 .aboutContainer {
@@ -277,3 +278,23 @@ label {
   font-size: 20px;
   font-weight: bold;
 }
+
+
+  .SignupBtn{
+    margin-top: 33px;
+  }
+
+  .LoginBtn{
+    margin-top: 33px;
+
+  }
+
+  .center{
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .logBtn{
+    width: 500px;
+    margin: 0 auto;
+  }

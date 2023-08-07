@@ -54,7 +54,6 @@ const LoginHomez = () => {
 
     return (
         <>
-            <HomezNavbar />
 
             <Container className="d-flex justify-content-center">
                 <Col md={6}>
