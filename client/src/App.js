@@ -11,6 +11,10 @@ import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import LoginHomez from "./pages/Login"
 import SignupHomez from "./pages/Signup";
+import Support from "./pages/Support";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Donate from "./pages/Donate";
 import { setContext } from '@apollo/client/link/context';
 import "./App.css"
 
@@ -54,6 +58,10 @@ function App() {
           <Route path="/developers" element={<Developers />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/donate" element={<Donate />} />
         </Routes>
 
         <Footer />
