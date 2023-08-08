@@ -24,6 +24,7 @@ HOMEZ runs on a MERN framework and can be run on the command line through node.j
 
 ## [INSTALLATION](#installation)
 Make sure that Express.js and Node.js are installed, then run the command "npm run test" in the root directory to make sure the program is running on the server. Run the "npm run build" command when you are ready to deploy the app in a more stable format.
+https://homez-a7bb0a2adb47.herokuapp.com/
 
 ## [USAGE](#usage)
 Either run the program through the command line or access the deployed program at (URL HERE).
