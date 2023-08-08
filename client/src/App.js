@@ -3,9 +3,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink  } from "@a
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Ride from "./pages/Ride";
+import PastDrives from "./pages/PastDrives";
 import Drive from "./pages/Drive";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import OneRide from "./pages/OneRide";
 // import Reviews from "./pages/Reviews";
 import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
@@ -58,6 +60,8 @@ function App() {
           <Route path="/developers" element={<Developers />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/rides/:rideId" element={<OneRide />} />
+          <Route path="/pastrides" element={<PastDrives />} />
           <Route path="/support" element={<Support />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -46,6 +46,7 @@ Either run the program through the command line or access the deployed program a
 - [Kin Ho](https://github.com/hokin2023)
 - [Mauricio Ortiz](https://github.com/Ortizzz-j)
 - [Paul Koehler](https://github.com/pk50sshowa)
+- *Special thanks goes out to Meg Meyers and Diarmuid Murphy for their help in getting this project up and running!*
 
 ## [TESTS](#tests)
 Feel free to test out the app with different logins or different drivers. A seed file has been set up with an initial database full of drivers, but this can be modified in the future.

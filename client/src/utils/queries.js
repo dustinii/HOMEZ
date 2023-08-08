@@ -65,6 +65,32 @@ export const GET_RIDERS_RIDES = gql`
   }
 `;
 
+export const GET_ONE_RIDE = gql`
+  query Ride($rideId: ID!) {
+    ride(id: $rideId) {
+      _id
+      origin
+      destination
+      timeForDeparture
+      price
+      riderID
+    }
+  }
+`;
+
+export const MY_RIDES = gql`
+  query MyRides {
+    myRides {
+      _id
+      origin
+      destination
+      timeForDeparture
+      price
+      riderID
+      active
+    }
+  }
+`;
 export const GET_UNCLAIMED_RIDES = gql`
  {
   unclaimedRides {

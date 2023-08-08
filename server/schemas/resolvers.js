@@ -53,6 +53,16 @@ const resolvers = {
     rides: async () => {
       return Ride.find({});
     },
+    myRides: async (_, args, context) => {
+      if (context.user) {
+        const rides = await Ride.find({ riderID: context.user._id, active: false });
+        return rides;
+      }
+      throw new AuthenticationError("you must be logged in");
+    },
+    ride: async (_, args) => {
+      return await Ride.findById(args.id);
+    },
     allusers: async (_, args, context) => {
       console.log("all users");
       return await User.find({});
@@ -112,18 +122,11 @@ const resolvers = {
 
     completeRide: async (parent, { HomezId, RideId }, context) => {
       if (context.user) {
-        const updatedRide = await Ride.findByIdAndUpdate(
-          { _id: RideId },
-          { $set: { homezTeamId: HomezId } },
-          { new: true }
-        );
-        const updatedHomez = await Homez.findByIdAndUpdate(
-          { _id: HomezId },
-          { $push: { completeRides: RideId } },
-          { new: true }
-        );
+        const ride = await Ride.findById(RideId);
+        ride.active = false;
+        ride.save();
 
-        return updatedRide;
+        return ride;
       }
       throw new AuthenticationError("You need to be logged in!");
     },

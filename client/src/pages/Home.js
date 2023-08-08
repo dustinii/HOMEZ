@@ -20,7 +20,7 @@ function Home() {
   </Container>
   <Card style={{ position: "absolute", bottom: "20px", left: "20px", zIndex: 2, backgroundColor: "rgba(255, 255, 255, 0.8)" }}>
     <Card.Body>
-      <Link to="/ride" className="text-dark" style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold' }}>
+      <Link to="/" className="text-dark" style={{ textDecoration: 'none', fontSize: '20px', fontWeight: 'bold' }}>
         <Card.Text>Need a ride? Sign up as a passenger</Card.Text>
       </Link>
     </Card.Body>

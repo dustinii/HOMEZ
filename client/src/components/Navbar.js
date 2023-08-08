@@ -29,7 +29,7 @@ const HomezNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-start">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/ride" >
+            <Nav.Link as={Link} to="/" >
               Ride
             </Nav.Link>
             <Nav.Link as={Link} to="/drive">
