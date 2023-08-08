@@ -12,6 +12,10 @@ const rideSchema = new Schema({
   timeForDeparture: {
     type: String,
     required: true,
+    get: (date)=> {
+      const newDate = new Date(date)
+      return newDate.toLocaleString()
+    }
   },
   price: {
     type: Number,

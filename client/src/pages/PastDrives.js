@@ -1,9 +1,13 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import HomezNavbar from '../components/Navbar';
-
+import { useQuery } from '@apollo/client';
+import { GET_RIDERS_RIDES } from '../utils/queries';
 const PastDrives = () => {
 
+  const {data, error, loading} = useQuery(GET_RIDERS_RIDES)
+  const pastRides = data?.riderRides || []
+  console.log(pastRides);
   // Hard-coded filler data
   const rides = [
     {
@@ -50,12 +54,12 @@ const PastDrives = () => {
         <h1 className='PastDrivesTitle'>Your Past Drives</h1>
         <h2 className='PastDrivesSubTitle'>See where you've been!</h2>
         <Row>
-          {rides.map(ride => (
+          {pastRides.map(ride => (
             <Col md={4} key={ride._id} className="mb-4">
               <Card>
                 <Card.Header>
-                  <strong>Date:</strong> {ride.date}
-                  <small className="text-muted float-right">{ride.time}</small>
+                  <strong>Date:</strong> {ride.timeForDeparture}
+                  {/* <small className="text-muted float-right">{ride.timeOfDeparture}</small> */}
                 </Card.Header>
                 <Card.Body>
                   <Card.Text><strong>From:</strong> {ride.origin}</Card.Text>
