@@ -13,8 +13,12 @@ import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import LoginHomez from "./pages/Login"
 import SignupHomez from "./pages/Signup";
+import Support from "./pages/Support";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Donate from "./pages/Donate";
 import { setContext } from '@apollo/client/link/context';
-
+import "./App.css"
 
 // import Image from "./components/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -58,6 +62,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/rides/:rideId" element={<OneRide />} />
           <Route path="/pastrides" element={<PastDrives />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/donate" element={<Donate />} />
         </Routes>
 
         <Footer />
