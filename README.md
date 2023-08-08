@@ -20,7 +20,7 @@ HOMEZ pairs riders with two drivers: One to take them home, and one to take thei
 HOMEZ runs on a MERN framework and can be run on the command line through node.js and express.js.
 
 ## [SCREENSHOT](#screenshot)
-![LA Skyline](/client/src/images/laSkyline.jpg)
+![LA Skyline](/client/src/images/homez.jpg)
 
 ## [INSTALLATION](#installation)
 Make sure that Express.js and Node.js are installed, then run the command "npm run test" in the root directory to make sure the program is running on the server. Run the "npm run build" command when you are ready to deploy the app in a more stable format.
