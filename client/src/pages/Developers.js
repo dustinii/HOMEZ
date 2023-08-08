@@ -27,7 +27,12 @@ function Developers() {
       <div className="developerGrid">
         <div className="developer">
           <h2>Dustin II</h2>
-          <p>This is a short bio for Developer 1.</p>
+          <p>
+            The team's premier developer, demonstrating unparalleled proficiency
+            in the MERN stack. His visionary approach and meticulous attention
+            to detail have been instrumental in propelling the team to new
+            heights.
+          </p>
         </div>
         <div className="developer">
           <h2>Paul Koehler</h2>
@@ -59,15 +64,26 @@ function Developers() {
         </div>
         <div className="developer">
           <h2>Brian Autieri</h2>
-          <p>This is a short bio for Developer 5.</p>
+          <p>
+            Proficient full stack developer based in Venice Beach, California.
+            While boasting a comprehensive skill set spanning the entire
+            development spectrum, his true passion shines in front-end design.
+            on the front end.{" "}
+          </p>
         </div>
         <div className="developer">
           <h2>Joel Estrada</h2>
-          <p>This is a short bio for Developer 6.</p>
+          <p>
+            Versatile and dedicated member of the team, bring a wealth of
+            expertise for back-end technologies.
+          </p>
         </div>
         <div className="developer">
           <h2>Kin Ho</h2>
-          <p>This is a short bio for Developer 7.</p>
+          <p>
+            Junior developer who has built several real-world projects using
+            React, MongoDB, HTML, and CSS.
+          </p>
         </div>
         <div className="developer">
           <h2>Mauricio Ortiz</h2>
