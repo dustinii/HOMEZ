@@ -19,6 +19,7 @@ const typeDefs = gql`
     price: Int
     homezTeamId: ID
     riderID: ID
+    active: Boolean
   }
 
   type Homez {
@@ -59,7 +60,8 @@ const typeDefs = gql`
     allusers: [User]
     riderRides: [Ride]
     unclaimedRides: [Ride]
-
+    ride(id: ID!): Ride
+    myRides: [Ride]
   }
 
   type Mutation {
@@ -74,7 +76,7 @@ const typeDefs = gql`
       origin: String!
       timeForDeparture: String!
     ): Ride
-    completeRide(HomezId: ID, RideId:ID): Ride
+    completeRide(HomezId: ID, RideId:ID!): Ride
   }
   type Subscription {
     ride: Ride

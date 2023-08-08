@@ -1,8 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const rideSchema = new Schema({
-
-  
   origin: {
     type: String,
     required: true,
@@ -17,6 +15,7 @@ const rideSchema = new Schema({
   },
   price: {
     type: Number,
+    default: () => Math.floor((Math.random() * 50) + 50),
   },
   homezTeamId: {
     type: Schema.Types.ObjectId,
@@ -25,8 +24,11 @@ const rideSchema = new Schema({
   riderID: {
     type: Schema.Types.ObjectId,
     ref: 'User',
+  },
+  active: {
+    type: Boolean,
+    default: true,
   }
-  
 },
 // set this to use virtual below
 {

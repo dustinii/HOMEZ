@@ -80,22 +80,22 @@ export const ADD_HOMEZ = gql`
   }
 `;
 
-export const COMPLETE_RIDE = gql`
-  mutation completeRide($newRide: inputRide!) {
-    completeRide(newRide: $newRide) {
-      _id
-      username
-      email
-      completeRides {
-        rideId
-        price
-        destination
-        origin
-        timeForDeparture
-      }
-    }
-  }
-`;
+// export const COMPLETE_RIDE = gql`
+//   mutation completeRide($newRide: inputRide!) {
+//     completeRide(newRide: $newRide) {
+//       _id
+//       username
+//       email
+//       completeRides {
+//         rideId
+//         price
+//         destination
+//         origin
+//         timeForDeparture
+//       }
+//     }
+//   }
+// `;
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!, $role: String!) {
   addUser(username: $username, email: $email, password: $password, role: $role) {
@@ -144,3 +144,15 @@ mutation postRide($riderID: ID, $price: Int, $destination: String!, $origin: Str
   }
 }
 `
+
+export const COMPLETE_RIDE = gql`
+  mutation completeRide($rideId: ID!) {
+    completeRide(RideId: $rideId) {
+      _id
+      destination
+      origin
+      price
+      active
+    }
+  }
+`;
