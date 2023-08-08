@@ -68,7 +68,6 @@ function Developers() {
             Proficient full stack developer based in Venice Beach, California.
             While boasting a comprehensive skill set spanning the entire
             development spectrum, his true passion shines in front-end design.
-            on the front end.{" "}
           </p>
         </div>
         <div className="developer">
