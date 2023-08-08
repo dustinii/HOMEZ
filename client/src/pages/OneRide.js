@@ -30,7 +30,7 @@ function OneRide() {
                     {!loading ? <div className="col">
                         <div className="card mt-5">
                             <div className="card-body">
-                                <h5 className="card-title">{ride.origin} to {ride.destination} @ ${ride.price}/hr</h5>
+                                <h5 className="card-title">{ride.origin} to {ride.destination} @ ${ride.price}</h5>
                                 {/* TODO: What is this paragraph? */}
                                 <p className="card-text">Mark the ride as complete to finalize your booking.</p>
                                 <Button type="submit" className="submitBtn" variant="outline-success" onClick={async () => {
